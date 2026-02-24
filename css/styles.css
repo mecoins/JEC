@@ -664,7 +664,7 @@ nav {
 }
 .services .section-label          { color: var(--gold); }
 .services .section-label::before  { background: var(--gold); }
-.services-title                   { color: white; }
+.services-title                   { color: var(--teal); }
 .services-title em                 { color: var(--gold); }
 
 .services-grid {
@@ -744,6 +744,7 @@ nav {
 .counselor-photo-wrap {
   overflow: hidden;
   position: relative;
+  border-radius: 8px;
 }
 .counselor-photo-wrap::after {
   content: '';
@@ -804,13 +805,13 @@ nav {
   margin-bottom: 1.5rem;
 }
 .spec-tag {
-  font-size: 0.68rem;
+  font-size: 0.67rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  background: white;
-  color: var(--teal);
-  border: 1px solid rgba(0, 196, 154, 0.2);
-  padding: 0.3rem 0.75rem;
+  background: var(--gold-pale);
+  color: var(--gold);
+  border: 1px solid rgba(167, 66, 200, 0.18);
+  padding: 0.28rem 0.75rem;
+  border-radius: 20px;
 }
 
 .counselor-bio {
@@ -821,7 +822,7 @@ nav {
 }
 .counselor-bio p       { margin-bottom: 0.75rem; }
 .counselor-bio p:last-child { margin-bottom: 0; }
-.counselor-bio em      { font-style: italic; color: var(--ink); }
+.counselor-bio em      { font-style: italic; color: var(--gold); }
 
 /* ── Booking Banner ── */
 .booking-banner {
