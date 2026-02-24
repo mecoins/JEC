@@ -428,13 +428,22 @@ footer { background:var(--ink); padding:5rem var(--pad) 2rem; }
 }
 
 /* Counselor book button — solid mint/teal fill, white text, rounded — matches staging */
-.link-book {
-  display:inline-flex; align-items:center; gap:.4rem;
-  font-family:'Jost',sans-serif; font-size:.75rem; font-weight:700;
-  letter-spacing:.12em; text-transform:uppercase;
-  color:#fff; background:var(--mint);
-  border:none; padding:.85rem 2rem; border-radius:6px;
-  cursor:pointer; text-decoration:none;
-  transition:background .2s, transform .2s, box-shadow .2s;
+.btn-teal {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--teal);
+  border: none;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.link-book:hover { background:var(--mint-light); transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,196,154,.35); }
+.btn-teal:hover {
+  background: var(--teal-light);
+  transform: translateY(-1px);
+}
