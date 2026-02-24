@@ -351,12 +351,10 @@ footer{background:var(--ink);padding:5rem var(--pad) 2.5rem}
   .footer-top{grid-template-columns:1fr}
   .welcome-stat-block{grid-template-columns:1fr 1fr}
   .hero h1{font-size:3rem}
-   @media (max-width: 700px) {
-  .counselor-badge {
-    position: static;
-    display: inline-block;
-    margin-bottom: 12px;
-  }
-}
+  .counselor-badge{position:static;display:inline-block;margin-bottom:12px;}
   .awards-band{padding:2rem;gap:2rem}
 }
+
+/* Testimonial carousel */
+.test-slide{display:none;}
+.test-slide.active{display:block;}
