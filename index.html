@@ -77,9 +77,7 @@
       </div>
       <div class="nav-item"><a href="#services" class="nav-link">Services</a></div>
       <div class="nav-item"><a href="workshops.html" class="nav-link">Workshops</a></div>
-      <div class="nav-item">
-        <a href="https://www.jecounselingkc.com/blog" target="_blank" rel="noopener" class="nav-link">Blog</a>
-      </div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
     </div>
 
     <div class="nav-right">
@@ -99,7 +97,7 @@
     <a href="#counselors">Our Team</a>
     <a href="#services">Services</a>
     <a href="workshops.html">Workshops</a>
-    <a href="https://www.jecounselingkc.com/blog" target="_blank" rel="noopener">Blog</a>
+    <a href="blog.html">Blog</a>
     <a href="#" id="mobSignin">Sign In</a>
     <a href="#" id="mobBook" class="mob-book-link">Book Now</a>
   </div>
@@ -388,8 +386,26 @@
   <!-- ══ TESTIMONIAL ══ -->
   <section class="testimonial">
     <div class="section-label section-label--center">Client Stories</div>
-    <blockquote class="test-quote">"Thank you so much for all of your support. I am forever grateful."</blockquote>
-    <div class="test-author">— A Journey Embraced Client</div>
+
+    <div class="test-carousel-wrap" style="max-width:750px;margin:0 auto;min-height:120px;">
+      <div class="test-slide active"><blockquote class="test-quote">"Thank you so much for all of your support. I am forever grateful."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"You're awesome, and I appreciate your approach."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"Thank you for not judging me."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"You literally saved my life."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"I thank God I found you. You helped me find the strength to heal after that toxic relationship."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"You really connected with my daughter from the jump."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"Our sessions have given me restored hopefulness."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+    </div>
+
+    <div class="test-dots" style="display:flex;justify-content:center;gap:8px;margin-top:2rem;">
+      <button class="test-dot active" data-index="0"></button>
+      <button class="test-dot" data-index="1"></button>
+      <button class="test-dot" data-index="2"></button>
+      <button class="test-dot" data-index="3"></button>
+      <button class="test-dot" data-index="4"></button>
+      <button class="test-dot" data-index="5"></button>
+      <button class="test-dot" data-index="6"></button>
+    </div>
   </section>
 
   <!-- ══ FOOTER ══ -->
@@ -410,7 +426,7 @@
           <li><a href="#counselors">Our Team</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="workshops.html">Workshops</a></li>
-          <li><a href="https://www.jecounselingkc.com/blog" target="_blank" rel="noopener">Blog</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -556,5 +572,25 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const slides = document.querySelectorAll('.test-slide');
+      const dots   = document.querySelectorAll('.test-dot');
+      let current  = 0;
+      let timer;
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => { clearInterval(timer); goTo(parseInt(dot.dataset.index)); startAuto(); });
+      });
+      startAuto();
+    })();
+  </script>
 </body>
 </html>
