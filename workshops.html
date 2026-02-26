@@ -354,7 +354,7 @@
         <div class="contact-drop" id="contactDrop">
           <div class="contact-drop-row contact-drop-row--email">
             <span class="contact-drop-icon">📧</span>
-            <a href="mailto:cstokes@jecounselingkc.com">cstokes&#64;jecounselingkc.com</a>
+            <a href="/cdn-cgi/l/email-protection#026171766d696771426867616d776c71676e6b6c6569612c616d6f">cstokes&#64;jecounselingkc.com</a>
           </div>
           <div class="contact-drop-row">
             <span class="contact-drop-icon">📞</span>
@@ -429,7 +429,7 @@
         </div>
 
         <div style="margin-top: 40px;">
-          <a href="/cdn-cgi/l/email-protection#661207080f1503260c030509130815030a0f08010d054805090b591513040c0305125b3403010f151203140f08014354560009144354562509080803051203024355274354562b09120e03144b220713010e120314435456524b36071412435456350b070a0a4354562114091316435456231e1603140f03080503" class="btn-register">Reserve Your Spot</a>
+          <button class="btn-register" id="connectedBtn">Reserve Your Spot</button>
         </div>
 
         <p style="margin-top: 20px; font-size: 0.85rem; color: #888;">
@@ -473,7 +473,7 @@
         </div>
 
         <div style="margin-top:40px;">
-          <a href="/cdn-cgi/l/email-protection#3145505f584254715b54525e445f42545d585f565a521f525e5c0e4244535b5452450c6354565842455443585f56140301575e431403016354525e47544314030166545d5d1402701403017f504352584242584245585214030170534442541403016354525e4754434814030176435e4441" class="btn-register">Reserve Your Spot</a>
+          <button class="btn-register" id="recoverBtn">Reserve Your Spot</button>
         </div>
 
         <p style="margin-top:20px;font-size:.85rem;color:#888;">
@@ -686,15 +686,86 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
   <script>
     // ── Testimonial carousel ──
     (function () {
       const slides = document.querySelectorAll('.test-slide');
       const dots   = document.querySelectorAll('.test-dot');
-      let current  = 0;
-      let timer;
+      let
 
-      function goTo(n) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active')
+  <!-- ══ WORKSHOP MODAL 1: CONNECTED ══ -->
+  <div class="modal-overlay" id="connectedModal" role="dialog" aria-modal="true" aria-labelledby="connectedModalTitle">
+    <div class="modal">
+      <button class="modal-x" aria-label="Close">✕</button>
+      <div class="modal-h" id="connectedModalTitle">Reserve Your Spot</div>
+      <div class="modal-sub">Connected: Strengthening the Mother-Daughter Bond<br>March 28 – April 18 · 11:00 AM–12:30 PM · $320 per pair</div>
+      <form name="workshop-connected" netlify netlify-honeypot="bot-field" id="connectedForm">
+        <input type="hidden" name="form-name" value="workshop-connected">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="fg"><label>Your Name</label><div class="fg-row">
+          <input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required>
+          <input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required>
+        </div></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000" autocomplete="tel"></div>
+        <div class="fg"><label>Number Attending (pairs)</label>
+          <select name="attending">
+            <option value="">Select...</option>
+            <option value="1 pair">1 pair</option>
+            <option value="2 pairs">2 pairs</option>
+            <option value="3 pairs">3 pairs</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Any questions or notes for us..."></textarea></div>
+        <button type="submit" class="btn-modal">Reserve My Spot</button>
+      </form>
+      <div id="connectedSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <p>Thank you! Your spot request has been received. We'll be in touch shortly to confirm.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ WORKSHOP MODAL 2: RECOVER WELL ══ -->
+  <div class="modal-overlay" id="recoverModal" role="dialog" aria-modal="true" aria-labelledby="recoverModalTitle">
+    <div class="modal">
+      <button class="modal-x" aria-label="Close">✕</button>
+      <div class="modal-h" id="recoverModalTitle">Reserve Your Spot</div>
+      <div class="modal-sub">Recover Well: Narcissistic Abuse Recovery Group<br>Mar 14 – Apr 4 · $45/session · $180 due at registration</div>
+      <form name="workshop-recover-well" netlify netlify-honeypot="bot-field" id="recoverForm">
+        <input type="hidden" name="form-name" value="workshop-recover-well">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="fg"><label>Your Name</label><div class="fg-row">
+          <input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required>
+          <input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required>
+        </div></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000" autocomplete="tel"></div>
+        <div class="fg"><label>Preferred Time Slot</label>
+          <select name="time-slot" required>
+            <option value="">Select a time slot...</option>
+            <option value="Group 1: 9:00 AM – 10:30 AM">Group 1: 9:00 AM – 10:30 AM</option>
+            <option value="Group 2: 1:00 PM – 2:30 PM">Group 2: 1:00 PM – 2:30 PM</option>
+          </select>
+        </div>
+        <div class="fg"><label>Number Attending</label>
+          <select name="attending">
+            <option value="">Select...</option>
+            <option value="1 person">1 person</option>
+            <option value="2 people">2 people</option>
+            <option value="3 people">3 people</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Any questions or notes for us..."></textarea></div>
+        <button type="submit" class="btn-modal">Reserve My Spot</button>
+      </form>
+      <div id="recoverSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <p>Thank you! Your spot request has been received. We'll be in touch shortly to confirm.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
