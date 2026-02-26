@@ -1,6 +1,6 @@
 /**
  * Journey Embraced Counseling — main.js
- * All interactive behaviour: modals, dropdown, chat, mobile menu, scroll reveal
+ * Modals, dropdown, mobile menu, scroll reveal, Netlify form submission
  */
 
 (function () {
@@ -10,10 +10,6 @@
      MODALS
   ───────────────────────────────────────── */
 
-  /**
-   * Open a modal by name (e.g. 'booking', 'signin', 'signup')
-   * @param {string} name
-   */
   function openModal(name) {
     var overlay = document.getElementById(name + 'Modal');
     if (!overlay) return;
@@ -21,28 +17,18 @@
     document.body.style.overflow = 'hidden';
   }
 
-  /**
-   * Close a modal by name
-   * @param {string} name
-   */
   function closeModal(name) {
     var overlay = document.getElementById(name + 'Modal');
     if (!overlay) return;
     overlay.classList.remove('open');
     document.body.style.overflow = '';
+    // Reset form and success message when closing
+    var form = overlay.querySelector('form');
+    var success = overlay.querySelector('.modal-success');
+    if (form) { form.reset(); form.style.display = ''; }
+    if (success) success.style.display = 'none';
   }
 
-  /**
-   * Switch from one modal to another
-   * @param {string} from
-   * @param {string} to
-   */
-  function switchModal(from, to) {
-    closeModal(from);
-    setTimeout(function () { openModal(to); }, 200);
-  }
-
-  /** Wire up all modal triggers */
   function initModals() {
     // Close buttons (✕)
     document.querySelectorAll('.modal-x').forEach(function (btn) {
@@ -52,7 +38,7 @@
       });
     });
 
-    // Click on backdrop to close
+    // Click backdrop to close
     document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) {
@@ -61,72 +47,44 @@
       });
     });
 
-    // Submit buttons
-    document.querySelectorAll('.btn-modal').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var form = btn.getAttribute('data-form');
-        var messages = {
-          booking: 'Appointment requested! In a live site this connects to your scheduling system.',
-          signin:  'Signed in successfully!',
-          signup:  'Account created successfully!'
-        };
-        alert(messages[form] || 'Submitted!');
-        closeModal(form);
-      });
-    });
-
-    // Switch modal links (e.g. "Sign in" / "Create an account")
-    document.querySelectorAll('[data-switch-to]').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        var overlay = link.closest('.modal-overlay');
-        var from    = overlay ? overlay.id.replace('Modal', '') : null;
-        var to      = link.getAttribute('data-switch-to');
-        if (from) switchModal(from, to);
-        else openModal(to);
-      });
-    });
-
-    // Open "booking" modal triggers
-    var bookingTriggers = [
-      'bookNavBtn', 'heroBookBtn', 'welcomeBookBtn', 'teamBookBtn', 'bannerBookBtn'
-    ];
+    // Generic "Book a Session" triggers — no pre-selection
+    var bookingTriggers = ['bookNavBtn', 'heroBookBtn', 'welcomeBookBtn', 'teamBookBtn', 'bannerBookBtn'];
     bookingTriggers.forEach(function (id) {
       var el = document.getElementById(id);
       if (el) {
         el.addEventListener('click', function (e) {
           e.preventDefault();
+          var select = document.getElementById('counselorSelect');
+          if (select) select.value = '';
           openModal('booking');
         });
       }
     });
 
-    // Sign In trigger
-    var signinBtn = document.getElementById('signinBtn');
-    if (signinBtn) {
-      signinBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal('signin');
-      });
-    }
-
-    // Mobile menu sign in / book now
-    var mobSignin = document.getElementById('mobSignin');
-    if (mobSignin) {
-      mobSignin.addEventListener('click', function (e) {
-        e.preventDefault();
-        closeMob();
-        openModal('signin');
-      });
-    }
+    // Mobile book now
     var mobBook = document.getElementById('mobBook');
     if (mobBook) {
       mobBook.addEventListener('click', function (e) {
         e.preventDefault();
         closeMob();
+        var select = document.getElementById('counselorSelect');
+        if (select) select.value = '';
         openModal('booking');
       });
     }
+
+    // Individual counselor "Book with [Name]" buttons — pre-select counselor
+    document.querySelectorAll('.book-counselor-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var counselor = btn.getAttribute('data-counselor');
+        var select = document.getElementById('counselorSelect');
+        if (select && counselor) {
+          select.value = counselor;
+        }
+        openModal('booking');
+      });
+    });
 
     // Escape key closes any open modal
     document.addEventListener('keydown', function (e) {
@@ -135,6 +93,48 @@
           closeModal(overlay.id.replace('Modal', ''));
         });
       }
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     NETLIFY FORM SUBMISSION
+  ───────────────────────────────────────── */
+
+  function initBookingForm() {
+    var form = document.getElementById('bookingForm');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+      }
+
+      var data = new FormData(form);
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(function () {
+        // Show success, hide form
+        form.style.display = 'none';
+        var success = document.getElementById('bookingSuccess');
+        if (success) success.style.display = 'block';
+        // Auto-close after 4 seconds
+        setTimeout(function () { closeModal('booking'); }, 4000);
+      })
+      .catch(function () {
+        if (submitBtn) {
+          submitBtn.textContent = 'Request Appointment';
+          submitBtn.disabled = false;
+        }
+        alert('There was a problem sending your request. Please call us at 816-974-3389 or email cstokes@jecounselingkc.com');
+      });
     });
   }
 
@@ -151,37 +151,60 @@
       var item   = btn.closest('.nav-item');
       var isOpen = item.classList.contains('open');
 
-      // Close all open dropdowns first
-      document.querySelectorAll('.nav-item.open').forEach(function (el) {
-        el.classList.remove('open');
-      });
-      btn.setAttribute('aria-expanded', 'false');
+      closeAllDropdowns();
 
-      // Toggle this one
       if (!isOpen) {
         item.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
 
-    // Close dropdown on outside click
+    document.querySelectorAll('.drop-card').forEach(function (card) {
+      card.addEventListener('click', closeAllDropdowns);
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     CONTACT US DROPDOWN
+  ───────────────────────────────────────── */
+
+  function initContactDropdown() {
+    var btn  = document.getElementById('contactDropBtn');
+    var drop = document.getElementById('contactDrop');
+    if (!btn || !drop) return;
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = drop.classList.contains('contact-drop--open');
+      // Close team dropdown
+      closeAllDropdowns();
+      if (!isOpen) {
+        drop.classList.add('contact-drop--open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Close on outside click
     document.addEventListener('click', function () {
-      document.querySelectorAll('.nav-item.open').forEach(function (el) {
-        el.classList.remove('open');
-      });
+      drop.classList.remove('contact-drop--open');
       btn.setAttribute('aria-expanded', 'false');
     });
 
-    // Close dropdown when a counselor link is clicked
-    document.querySelectorAll('.drop-card').forEach(function (card) {
-      card.addEventListener('click', function () {
-        document.querySelectorAll('.nav-item.open').forEach(function (el) {
-          el.classList.remove('open');
-        });
-        btn.setAttribute('aria-expanded', 'false');
-      });
+    // Prevent clicks inside dropdown from bubbling and closing it
+    drop.addEventListener('click', function (e) { e.stopPropagation(); });
+  }
+
+  function closeAllDropdowns() {
+    document.querySelectorAll('.nav-item.open').forEach(function (el) {
+      el.classList.remove('open');
+    });
+    document.querySelectorAll('[aria-expanded="true"]').forEach(function (el) {
+      el.setAttribute('aria-expanded', 'false');
     });
   }
+
+  // Close all dropdowns on outside click
+  document.addEventListener('click', closeAllDropdowns);
 
   /* ─────────────────────────────────────────
      MOBILE MENU
@@ -214,73 +237,9 @@
 
     if (close) close.addEventListener('click', closeMob);
 
-    // Auto-close nav links (except sign-in/book which have their own handlers)
-    document.querySelectorAll('.mob-menu a:not(#mobSignin):not(#mobBook)').forEach(function (link) {
+    document.querySelectorAll('.mob-menu a:not(#mobBook)').forEach(function (link) {
       link.addEventListener('click', closeMob);
     });
-  }
-
-  /* ─────────────────────────────────────────
-     LIVE CHAT
-  ───────────────────────────────────────── */
-
-  var chatOpen = false;
-  var replyIndex = 0;
-  var chatReplies = [
-    'Thank you for reaching out! For scheduling, please call 816-974-3389 or use the Book a Session button.',
-    'We serve Missouri and Kansas clients in-person and virtually. Would you like to learn more?',
-    'Each counselor has different specialties. Would you like help finding the best fit for you?',
-    'We offer individual counseling, couples therapy, life coaching, and more. What are you looking for?',
-    'Feel free to email tanise@jecounselingkc.com or call 816-974-3389 and we will get back to you quickly!'
-  ];
-
-  function toggleChat() {
-    chatOpen = !chatOpen;
-    var win = document.getElementById('chatWin');
-    if (win) win.classList.toggle('open', chatOpen);
-    if (chatOpen) {
-      var input = document.getElementById('chatIn');
-      if (input) input.focus();
-    }
-  }
-
-  function sendChat() {
-    var input = document.getElementById('chatIn');
-    var msgs  = document.getElementById('chatMsgs');
-    if (!input || !msgs) return;
-
-    var text = input.value.trim();
-    if (!text) return;
-
-    var outDiv = document.createElement('div');
-    outDiv.className   = 'msg out';
-    outDiv.textContent = text;
-    msgs.appendChild(outDiv);
-    input.value = '';
-    msgs.scrollTop = msgs.scrollHeight;
-
-    setTimeout(function () {
-      var inDiv = document.createElement('div');
-      inDiv.className   = 'msg in';
-      inDiv.textContent = chatReplies[replyIndex % chatReplies.length];
-      replyIndex++;
-      msgs.appendChild(inDiv);
-      msgs.scrollTop = msgs.scrollHeight;
-    }, 900);
-  }
-
-  function initChat() {
-    var toggleBtn = document.getElementById('chatToggleBtn');
-    var sendBtn   = document.getElementById('chatSendBtn');
-    var input     = document.getElementById('chatIn');
-
-    if (toggleBtn) toggleBtn.addEventListener('click', toggleChat);
-    if (sendBtn)   sendBtn.addEventListener('click', sendChat);
-    if (input) {
-      input.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') sendChat();
-      });
-    }
   }
 
   /* ─────────────────────────────────────────
@@ -308,9 +267,10 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     initModals();
+    initBookingForm();
     initTeamDropdown();
+    initContactDropdown();
     initMobileMenu();
-    initChat();
     initScrollReveal();
   });
 
