@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Journey Embraced Counseling LLC — Compassionate, insight-driven counseling for individuals, couples, and families. Serving Missouri and Kansas.">
+  <title>Journey Embraced Counseling LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="Journey Embraced Counseling">
+    </a>
+
+    <div class="nav-center">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="#about" class="nav-link">About</a>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" id="teamDropBtn" aria-expanded="false" aria-haspopup="true">
+          Our Team
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+        </button>
+        <div class="mega-drop" role="menu">
+          <a class="drop-card" href="#tanise" role="menuitem">
+            <img class="drop-thumb" src="images/tanise.jpg" alt="Tanise Smith">
+            <div class="drop-info">
+              <div class="drop-name">Tanise Smith</div>
+              <div class="drop-role">MS, LCPC · Founder</div>
+            </div>
+          </a>
+          <a class="drop-card" href="#natasha" role="menuitem">
+            <img class="drop-thumb" src="images/natasha.jpg" alt="Natasha Harris-Butler">
+            <div class="drop-info">
+              <div class="drop-name">Natasha Harris-Butler</div>
+              <div class="drop-role">LCSW, LSCSW</div>
+            </div>
+          </a>
+          <a class="drop-card" href="#debra" role="menuitem">
+            <img class="drop-thumb" src="images/debra.jpg" alt="Debra Richardson">
+            <div class="drop-info">
+              <div class="drop-name">Debra Richardson</div>
+              <div class="drop-role">LSCSW, LCSW</div>
+            </div>
+          </a>
+          <a class="drop-card" href="#chris" role="menuitem">
+            <img class="drop-thumb" src="images/chris.jpg" alt="Chris Gudjenov">
+            <div class="drop-info">
+              <div class="drop-name">Chris Gudjenov</div>
+              <div class="drop-role">LPC · Athletes & Men</div>
+            </div>
+          </a>
+          <a class="drop-card" href="#cynthia" role="menuitem">
+            <img class="drop-thumb" src="images/cynthia.jpg" alt="Cynthia Stokes">
+            <div class="drop-info">
+              <div class="drop-name">Cynthia Stokes</div>
+              <div class="drop-role">LCC · Life Coach</div>
+            </div>
+          </a>
+          <a class="drop-card" href="#jonathan" role="menuitem">
+            <img class="drop-thumb" src="images/jonathan.jpg" alt="Jonathan Slade">
+            <div class="drop-info">
+              <div class="drop-name">Jonathan Slade</div>
+              <div class="drop-role">B.Th. · Pastoral Coach</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#services" class="nav-link">Services</a></div>
+      <div class="nav-item"><a href="workshops.html" class="nav-link">Workshops</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item" style="position:relative;">
+        <button class="nav-link" id="contactDropBtn" aria-expanded="false">
+          Contact Us
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+        </button>
+        <div class="contact-drop" id="contactDrop">
+          <div class="contact-drop-row contact-drop-row--email">
+            <span class="contact-drop-icon">📧</span>
+            <a href="mailto:cstokes@jecounselingkc.com">cstokes&#64;jecounselingkc.com</a>
+          </div>
+          <div class="contact-drop-row">
+            <span class="contact-drop-icon">📞</span>
+            <a href="tel:8169743389">816-974-3389</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+<a href="#" class="btn-nav-cta" id="bookNavBtn">Book a Session</a>
+      <button class="mob-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Mobile navigation">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#counselors">Our Team</a>
+    <a href="#services">Services</a>
+    <a href="workshops.html">Workshops</a>
+    <a href="blog.html">Blog</a>
+<a href="#" id="mobBook" class="mob-book-link">Book Now</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-tag">✦ Serving Missouri &amp; Kansas ✦</div>
+      <h1>Where <em>Healing</em><br>Begins</h1>
+      <p class="hero-sub">Compassionate, insight-driven counseling for individuals, couples, and families. You don't have to walk through it alone.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-gold" id="heroBookBtn">Book a Session</a>
+        <a href="#counselors" class="btn-outline-white">Meet Our Team</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      scroll
+    </div>
+  </section>
+
+  <!-- ══ TICKER ══ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="tick-item">Individual Counseling<span class="tick-sep"></span></span>
+      <span class="tick-item">Couples Therapy<span class="tick-sep"></span></span>
+      <span class="tick-item">Trauma Recovery<span class="tick-sep"></span></span>
+      <span class="tick-item">Narcissistic Abuse Recovery<span class="tick-sep"></span></span>
+      <span class="tick-item">Men's Mental Health<span class="tick-sep"></span></span>
+      <span class="tick-item">Adolescent Support<span class="tick-sep"></span></span>
+      <span class="tick-item">Faith-Based Counseling<span class="tick-sep"></span></span>
+      <span class="tick-item">Life Coaching<span class="tick-sep"></span></span>
+      <span class="tick-item">Athletic Performance<span class="tick-sep"></span></span>
+      <span class="tick-item">Group Therapy<span class="tick-sep"></span></span>
+      <span class="tick-item">Individual Counseling<span class="tick-sep"></span></span>
+      <span class="tick-item">Couples Therapy<span class="tick-sep"></span></span>
+      <span class="tick-item">Trauma Recovery<span class="tick-sep"></span></span>
+      <span class="tick-item">Narcissistic Abuse Recovery<span class="tick-sep"></span></span>
+      <span class="tick-item">Men's Mental Health<span class="tick-sep"></span></span>
+      <span class="tick-item">Adolescent Support<span class="tick-sep"></span></span>
+      <span class="tick-item">Faith-Based Counseling<span class="tick-sep"></span></span>
+      <span class="tick-item">Life Coaching<span class="tick-sep"></span></span>
+      <span class="tick-item">Athletic Performance<span class="tick-sep"></span></span>
+      <span class="tick-item">Group Therapy<span class="tick-sep"></span></span>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="welcome" id="about">
+    <div class="welcome-left reveal">
+      <div class="section-label">Our Welcome</div>
+      <h2 class="section-title">You deserve to feel<br><em>free again</em></h2>
+      <div class="welcome-stat-block">
+        <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Years of Experience</div></div>
+        <div class="stat-item"><div class="stat-num">Est.<br>2020</div><div class="stat-label">Journey Embraced</div></div>
+        <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Licensed Clinicians</div></div>
+        <div class="stat-item"><div class="stat-num">MO+KS</div><div class="stat-label">States Licensed</div></div>
+      </div>
+    </div>
+    <div class="welcome-right reveal">
+      <p>Do you feel <strong>stuck, unmotivated, or overwhelmed?</strong> Is your mind constantly racing—especially at night—making it hard to rest? Do you find yourself avoiding conflict, even if it means accepting less than you deserve?</p>
+      <p>Maybe you're recovering from <strong>narcissistic abuse</strong>—whether from a partner, a family member, or in the workplace. Perhaps you're trying to find balance between work and life, or just navigating a difficult season.</p>
+      <p>Is your adolescent son or daughter in need of a mentor or healing space to talk? Are you a man seeking guidance on identity, purpose, or emotional health? Would you benefit from counseling that aligns with your <strong>Christian faith?</strong></p>
+      <p>Whatever you're facing, you don't have to walk through it alone. Your goals matter. It's okay to ask for support — and we're here to walk alongside you on your journey.</p>
+      <div class="cta-wrap">
+        <a href="#" class="btn-teal" id="welcomeBookBtn">Start Your Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AWARDS ══ -->
+  <div class="awards-band">
+    <div class="award-label">Recognition</div>
+    <div class="award-pill">
+      <span class="award-icon">🏆</span>
+      <div>
+        <div class="award-text">KC People's Choice — Best Therapist</div>
+        <div class="award-year">Finalist 2023 &amp; 2025</div>
+      </div>
+    </div>
+    <div class="award-pill">
+      <span class="award-icon">⚖️</span>
+      <div>
+        <div class="award-text">Licensed in Missouri &amp; Kansas</div>
+        <div class="award-year">Clinical Supervision Certified</div>
+      </div>
+    </div>
+    <div class="award-pill">
+      <span class="award-icon">🤝</span>
+      <div>
+        <div class="award-text">In-Person &amp; Virtual Sessions</div>
+        <div class="award-year">Shawnee, KS · 12480 W. 62 Terr.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SERVICES ══ -->
+  <section class="services" id="services">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title services-title">Specialties &amp; <em>Services</em></h2>
+    <div class="services-grid">
+      <div class="svc-card reveal"><div class="svc-num">01</div><div class="svc-title">Individual Counseling</div><p class="svc-desc">One-on-one therapy for anxiety, depression, trauma, and personal growth in a safe, judgment-free space.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">02</div><div class="svc-title">Couples &amp; Relationship</div><p class="svc-desc">Restore harmony and communication. Navigate conflict, rebuild trust, and grow together.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">03</div><div class="svc-title">Narcissistic Abuse Recovery</div><p class="svc-desc">Specialized support for those healing from emotionally abusive dynamics with partners, family, or at work.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">04</div><div class="svc-title">Adolescent Support</div><p class="svc-desc">A nurturing space for teens to build resilience, coping skills, confidence, and emotional health.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">05</div><div class="svc-title">Men's Mental Health</div><p class="svc-desc">Focused support for men navigating identity, purpose, anxiety, and emotional wellbeing.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">06</div><div class="svc-title">Faith-Based Counseling</div><p class="svc-desc">Counseling that integrates and honors your Christian faith throughout the healing journey.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">07</div><div class="svc-title">Group Therapy</div><p class="svc-desc">Therapeutic groups for family healing, wounded identity, co-dependence recovery, and youth music groups.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">08</div><div class="svc-title">Life Coaching</div><p class="svc-desc">Practical guidance for goal setting, self-improvement, and living with intention and clarity.</p></div>
+      <div class="svc-card reveal"><div class="svc-num">09</div><div class="svc-title">Athletic Mental Performance</div><p class="svc-desc">Certified consulting for adolescent athletes, high performers, and military personnel.</p></div>
+    </div>
+  </section>
+
+  <!-- ══ COUNSELORS ══ -->
+  <section class="counselors" id="counselors">
+    <div class="counselors-intro">
+      <div class="reveal">
+        <div class="section-label">Our Team</div>
+        <h2 class="section-title">Meet Your<br><em>Counselors</em></h2>
+      </div>
+      <div class="reveal">
+        <p class="counselors-intro-text">Each member of our team brings unique expertise, lived experience, and a deep commitment to walking alongside you. Use the dropdown menu above to jump directly to any counselor.</p>
+        <a href="#" class="btn-teal" id="teamBookBtn">Book Any Counselor</a>
+      </div>
+    </div>
+
+    <div class="counselor-section reveal" id="tanise">
+      <div class="counselor-photo-col">
+        <div class="counselor-photo-wrap">
+          <span class="counselor-badge">Founder</span>
+          <img class="counselor-photo" src="images/tanise.jpg" alt="Tanise Smith, MS LCPC">
+        </div>
+      </div>
+      <div class="counselor-info">
+        <div class="counselor-name">Tanise Smith</div>
+        <div class="counselor-cred">MS, LCPC · Clinical Psychotherapist · Founder</div>
+        <div class="counselor-specialties">
+          <span class="spec-tag">Narcissistic Abuse Recovery</span><span class="spec-tag">Trauma</span>
+          <span class="spec-tag">Depression &amp; Anxiety</span><span class="spec-tag">Grief</span>
+          <span class="spec-tag">Relationships</span><span class="spec-tag">Faith-Based</span>
+          <span class="spec-tag">Group Therapy</span>
+        </div>
+        <div class="counselor-bio">
+          <p>Tanise is a clinically licensed psychotherapist in Kansas and Missouri and the Founder of Journey Embraced Counseling (est. 2020). With over 20 years of experience, she provides compassionate, insight-driven care for individuals navigating narcissistic abuse recovery, trauma, depression, anxiety, grief, and relationship challenges.</p>
+          <p>She was honored to be a nominated finalist for Best Therapist in the Kansas City People's Choice Awards in 2023 and 2025. She has supported hundreds of clients healing from emotionally abusive dynamics and specializes in attachment, identity development, and relational growth.</p>
+          <p>Tanise also leads specialty therapeutic groups focused on family healing, wounded identity, co-dependence recovery, and youth music-based groups. She serves as a certified clinical supervisor in Kansas and Missouri, as well as a consultant for emerging private practice clinicians.</p>
+          <p><em>"I look forward to sharing genuine support alongside you on your journey."</em></p>
+        </div>
+        <button class="btn-teal book-counselor-btn" data-counselor="Tanise Smith, MS, LCPC">Book with Tanise →</button>
+      </div>
+    </div>
+
+    <div class="counselor-section reveal" id="natasha">
+      <div class="counselor-photo-col">
+        <div class="counselor-photo-wrap">
+          <img class="counselor-photo" src="images/natasha.jpg" alt="Natasha Harris-Butler, LCSW LSCSW">
+        </div>
+      </div>
+      <div class="counselor-info">
+        <div class="counselor-name">Natasha Harris-Butler</div>
+        <div class="counselor-cred">LCSW, LSCSW · Clinical Social Worker / Therapist</div>
+        <div class="counselor-specialties">
+          <span class="spec-tag">Anxiety &amp; Overthinking</span><span class="spec-tag">Depression</span>
+          <span class="spec-tag">Stress Management</span><span class="spec-tag">Divorce Recovery</span>
+          <span class="spec-tag">Grief</span><span class="spec-tag">CBT</span><span class="spec-tag">Group Therapy</span>
+        </div>
+        <div class="counselor-bio">
+          <p>Natasha is a Kansas and Missouri Licensed Clinical Social Worker who has been serving individuals and families since 2006. She specializes in using Cognitive Behavioral Therapy (CBT) to help clients effectively manage anxiety, overthinking, stress, and depression.</p>
+          <p>Natasha is passionate about equipping individuals with practical, evidence-based tools to challenge unhelpful thought patterns, regulate emotions, and build healthier coping strategies. She also facilitates therapeutic groups designed to address anxiety and provide structured skill-building in a supportive environment.</p>
+          <p>She is also the author of <em>Anchored by Grace: Prayers for Keeping an Undivided Heart After Divorce</em>, a prayer journal supporting individuals navigating the emotional and spiritual journey of divorce.</p>
+          <p><em>"I listen; I share empathy, understanding, and unconditional positive regard. My hope is to help clients draw from their strengths while cultivating an undivided heart."</em></p>
+        </div>
+        <button class="btn-teal book-counselor-btn" data-counselor="Natasha Harris-Butler, LCSW">Book with Natasha →</button>
+      </div>
+    </div>
+
+    <div class="counselor-section reveal" id="debra">
+      <div class="counselor-photo-col">
+        <div class="counselor-photo-wrap">
+          <img class="counselor-photo" src="images/debra.jpg" alt="Debra Richardson, LSCSW LCSW">
+        </div>
+      </div>
+      <div class="counselor-info">
+        <div class="counselor-name">Debra Richardson</div>
+        <div class="counselor-cred">LSCSW, LCSW · Clinical Social Worker / Psychotherapist</div>
+        <div class="counselor-specialties">
+          <span class="spec-tag">Depression</span><span class="spec-tag">Anxiety</span>
+          <span class="spec-tag">Relationship Challenges</span><span class="spec-tag">Grief &amp; Loss</span>
+          <span class="spec-tag">CBT</span><span class="spec-tag">Resilience Building</span>
+        </div>
+        <div class="counselor-bio">
+          <p>Debra is a Kansas and Missouri Licensed Clinical Social Worker and Psychotherapist with over 30 years of experience in social work and mental health. Throughout her career, she has served individuals and families in a variety of clinical settings and remains deeply committed to helping others move toward healing and wellness.</p>
+          <p>Debra views therapy as a guided conversation that creates space for growth, clarity, and meaningful change. Her approach is interactive, conversational, and grounded in Cognitive Behavioral Therapy (CBT).</p>
+          <p><em>"My goal is to normalize the therapy process and provide a supportive environment where clients feel heard, empowered, and equipped to move forward with confidence."</em></p>
+        </div>
+        <button class="btn-teal book-counselor-btn" data-counselor="Debra Richardson, LSCSW">Book with Debra →</button>
+      </div>
+    </div>
+
+    <div class="counselor-section reveal" id="chris">
+      <div class="counselor-photo-col">
+        <div class="counselor-photo-wrap">
+          <img class="counselor-photo" src="images/chris.jpg" alt="Chris Gudjenov, LPC">
+        </div>
+      </div>
+      <div class="counselor-info">
+        <div class="counselor-name">Chris Gudjenov</div>
+        <div class="counselor-cred">LPC · Under Clinical Supervision · Adolescent Athletes &amp; Men's Mental Health</div>
+        <div class="counselor-specialties">
+          <span class="spec-tag">Adolescent Athletes</span><span class="spec-tag">Men's Mental Health</span>
+          <span class="spec-tag">Anxiety &amp; Depression</span><span class="spec-tag">Military Families</span>
+          <span class="spec-tag">Substance Use</span><span class="spec-tag">Mental Performance</span>
+          <span class="spec-tag">Life Transitions</span>
+        </div>
+        <div class="counselor-bio">
+          <p>Chris is a Licensed Professional Counselor (KS) practicing under clinical supervision with over 10 years of experience working with adolescents and adults. For the past seven years, he has supported U.S. Army service members and their families through resilience training, CBT-based skill development, and substance use support.</p>
+          <p>As a Certified Mental Performance Consultant, Chris specializes in working with adolescent athletes, high performers, and men navigating anxiety, depression, life transitions, and relationship challenges.</p>
+          <p>Outside of work, Chris enjoys hiking, staying active outdoors, and playing just about any sport he can get his hands on.</p>
+          <p><em>"Using a Cognitive-Behavioral approach, I help clients build self-awareness, manage anxiety, and develop practical tools that create lasting growth—both on and off the field."</em></p>
+        </div>
+        <button class="btn-teal book-counselor-btn" data-counselor="Chris Gudjenov, LPC">Book with Chris →</button>
+      </div>
+    </div>
+
+    <div class="counselor-section reveal" id="cynthia">
+      <div class="counselor-photo-col">
+        <div class="counselor-photo-wrap">
+          <img class="counselor-photo" src="images/cynthia.jpg" alt="Cynthia Stokes, LCC">
+        </div>
+      </div>
+      <div class="counselor-info">
+        <div class="counselor-name">Cynthia Stokes</div>
+        <div class="counselor-cred">LCC · Certified Life Coach / Administrative Coordinator</div>
+        <div class="counselor-specialties">
+          <span class="spec-tag">Adolescents &amp; Teens</span><span class="spec-tag">Women's Coaching</span>
+          <span class="spec-tag">Christian Mentorship</span><span class="spec-tag">Life Stress</span>
+          <span class="spec-tag">Marital Challenges</span><span class="spec-tag">Parenthood</span>
+          <span class="spec-tag">Confidence Building</span>
+        </div>
+        <div class="counselor-bio">
+          <p>Cynthia Stokes is a certified life coach with an extensive background as an instructor and mentor. She specializes in working with adolescents and teens, supporting them as they navigate emotional and mental challenges while building practical coping skills, confidence, and resilience.</p>
+          <p>She also works with women from diverse backgrounds and is especially passionate about providing Christian mentorship and coaching to women navigating life stress, marital challenges, and the journey of parenthood. As a wife of over 19 years and a mother of five, Cynthia brings both professional insight and personal experience to her work.</p>
+          <p><em>"I am committed to helping clients build confidence, overcome mental and emotional barriers, and move forward with greater clarity and peace."</em></p>
+        </div>
+        <button class="btn-teal book-counselor-btn" data-counselor="Cynthia Stokes, LCC">Book with Cynthia →</button>
+      </div>
+    </div>
+
+    <div class="counselor-section reveal" id="jonathan">
+      <div class="counselor-photo-col">
+        <div class="counselor-photo-wrap">
+          <img class="counselor-photo" src="images/jonathan.jpg" alt="Jonathan Slade, B.Th.">
+        </div>
+      </div>
+      <div class="counselor-info">
+        <div class="counselor-name">Jonathan Slade</div>
+        <div class="counselor-cred">B.Th. · Pastoral Counselor &amp; Men's Life Coach</div>
+        <div class="counselor-specialties">
+          <span class="spec-tag">Pastoral Counseling</span><span class="spec-tag">Men's Life Coaching</span>
+          <span class="spec-tag">Faith &amp; Purpose</span><span class="spec-tag">Servant Leadership</span>
+          <span class="spec-tag">Goal Setting</span><span class="spec-tag">Life Transitions</span>
+          <span class="spec-tag">Family</span>
+        </div>
+        <div class="counselor-bio">
+          <p>Jonathan is a pastor and life coach with a deep passion for helping people find clarity, healing, and purpose in every season of life. With years of experience walking alongside individuals and families through times of transition and growth, he provides practical, faith-based guidance to support emotional, spiritual, and personal development.</p>
+          <p>Jonathan is especially committed to supporting men in their journey toward becoming servant leaders — whether at home, at work, or in their communities.</p>
+          <p>Jonathan is a devoted husband and proud father of four. He enjoys mixed martial arts, hiking, anime, and family time.</p>
+          <p><em>"My approach is centered on creating a safe, encouraging space where you can reflect, realign, and move forward with confidence and hope."</em></p>
+        </div>
+        <button class="btn-teal book-counselor-btn" data-counselor="Jonathan Slade, B.Th.">Book with Jonathan →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BOOKING BANNER ══ -->
+  <section class="booking-banner" id="workshops">
+    <div>
+      <h2>Ready to begin your <em>journey?</em></h2>
+      <p>Schedule a session today or reach out to learn more about our community workshops and therapeutic groups. We serve Missouri and Kansas clients both in-person and virtually.</p>
+    </div>
+    <a href="#" class="btn-white-solid" id="bannerBookBtn">Book a Session Now</a>
+  </section>
+
+  <!-- ══ TESTIMONIAL ══ -->
+  <section class="testimonial">
+    <div class="section-label section-label--center">Client Stories</div>
+
+    <div class="test-carousel-wrap" style="max-width:750px;margin:0 auto;min-height:120px;">
+      <div class="test-slide active"><blockquote class="test-quote">"Thank you so much for all of your support. I am forever grateful."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"You're awesome, and I appreciate your approach."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"Thank you for not judging me."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"You literally saved my life."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"I thank God I found you. You helped me find the strength to heal after that toxic relationship."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"You really connected with my daughter from the jump."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+      <div class="test-slide"><blockquote class="test-quote">"Our sessions have given me restored hopefulness."</blockquote><div class="test-author">— A Journey Embraced Client</div></div>
+    </div>
+
+    <div class="test-dots" style="display:flex;justify-content:center;gap:8px;margin-top:2rem;">
+      <button class="test-dot active" data-index="0"></button>
+      <button class="test-dot" data-index="1"></button>
+      <button class="test-dot" data-index="2"></button>
+      <button class="test-dot" data-index="3"></button>
+      <button class="test-dot" data-index="4"></button>
+      <button class="test-dot" data-index="5"></button>
+      <button class="test-dot" data-index="6"></button>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/logo.png" alt="Journey Embraced Counseling">
+        <p class="footer-about">Compassionate, insight-driven counseling for individuals, couples, and families. Serving Missouri and Kansas since 2020.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/journeyembracedkc" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="mailto:tanise@jecounselingkc.com" aria-label="Email us">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#counselors">Our Team</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Our Counselors</h5>
+        <ul>
+          <li><a href="#tanise">Tanise Smith</a></li>
+          <li><a href="#natasha">Natasha Harris-Butler</a></li>
+          <li><a href="#debra">Debra Richardson</a></li>
+          <li><a href="#chris">Chris Gudjenov</a></li>
+          <li><a href="#cynthia">Cynthia Stokes</a></li>
+          <li><a href="#jonathan">Jonathan Slade</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact-info">
+        <h5>Contact</h5>
+        <p>12480 W. 62 Terr.<br>Shawnee, KS 66216</p>
+        <p><a href="tel:8169743389">816-974-3389</a></p>
+        <p><a href="mailto:tanise@jecounselingkc.com">tanise@jecounselingkc.com</a></p>
+      </div>
+    </div>
+    <div class="footer-pt-badge">
+      <a href="https://www.psychologytoday.com/us/therapists/tanise-smith-shawnee-ks/755329" target="_blank" rel="noopener">
+        <img src="images/psychology_today.png" alt="Verified by Psychology Today" height="52">
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Journey Embraced Counseling LLC. All rights reserved.</p>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ BOOKING MODAL ══ -->
+  <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="modal">
+      <button class="modal-x" aria-label="Close">✕</button>
+      <div class="modal-h" id="bookingModalTitle">Book a Session</div>
+      <div class="modal-sub">Fill out the form below and we'll be in touch to confirm your appointment.</div>
+      <form name="booking" netlify netlify-honeypot="bot-field" id="bookingForm">
+      <input type="hidden" name="form-name" value="booking">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="fg">
+        <label>Your Name</label>
+        <div class="fg-row">
+          <input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required>
+          <input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+      <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000" autocomplete="tel"></div>
+      <div class="fg">
+        <label>Select Counselor</label>
+        <select name="counselor" id="counselorSelect">
+          <option value="">Choose a counselor...</option>
+          <option value="Tanise Smith, MS, LCPC">Tanise Smith, MS, LCPC</option>
+          <option value="Natasha Harris-Butler, LCSW">Natasha Harris-Butler, LCSW</option>
+          <option value="Debra Richardson, LSCSW">Debra Richardson, LSCSW</option>
+          <option value="Chris Gudjenov, LPC">Chris Gudjenov, LPC</option>
+          <option value="Cynthia Stokes, LCC">Cynthia Stokes, LCC</option>
+          <option value="Jonathan Slade, B.Th.">Jonathan Slade, B.Th.</option>
+          <option value="No preference">No preference</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Service Type</label>
+        <select name="service">
+          <option value="">Select a service...</option>
+          <option>Individual Counseling</option>
+          <option>Couples Therapy</option>
+          <option>Adolescent Support</option>
+          <option>Faith-Based Counseling</option>
+          <option>Life Coaching</option>
+          <option>Narcissistic Abuse Recovery</option>
+          <option>Men's Mental Health</option>
+          <option>Group Therapy</option>
+        </select>
+      </div>
+      <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Brief description of what you'd like to work on..."></textarea></div>
+      <button type="submit" class="btn-modal">Request Appointment</button>
+      </form>
+      <div id="bookingSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <p>Thank you! Your request has been received. We'll be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const slides = document.querySelectorAll('.test-slide');
+      const dots   = document.querySelectorAll('.test-dot');
+      let current  = 0;
+      let timer;
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => { clearInterval(timer); goTo(parseInt(dot.dataset.index)); startAuto(); });
+      });
+      startAuto();
+    })();
+  </script>
+</body>
+</html>
