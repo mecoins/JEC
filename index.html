@@ -78,11 +78,26 @@
       <div class="nav-item"><a href="#services" class="nav-link">Services</a></div>
       <div class="nav-item"><a href="workshops.html" class="nav-link">Workshops</a></div>
       <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+      <div class="nav-item" style="position:relative;">
+        <button class="nav-link" id="contactDropBtn" aria-expanded="false">
+          Contact Us
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+        </button>
+        <div class="contact-drop" id="contactDrop">
+          <div class="contact-drop-row contact-drop-row--email">
+            <span class="contact-drop-icon">📧</span>
+            <a href="mailto:cstokes@jecounselingkc.com">cstokes&#64;jecounselingkc.com</a>
+          </div>
+          <div class="contact-drop-row">
+            <span class="contact-drop-icon">📞</span>
+            <a href="tel:8169743389">816-974-3389</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="nav-right">
-      <a href="#" class="btn-nav-ghost" id="signinBtn">Sign In</a>
-      <a href="#" class="btn-nav-cta" id="bookNavBtn">Book a Session</a>
+<a href="#" class="btn-nav-cta" id="bookNavBtn">Book a Session</a>
       <button class="mob-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -98,8 +113,7 @@
     <a href="#services">Services</a>
     <a href="workshops.html">Workshops</a>
     <a href="blog.html">Blog</a>
-    <a href="#" id="mobSignin">Sign In</a>
-    <a href="#" id="mobBook" class="mob-book-link">Book Now</a>
+<a href="#" id="mobBook" class="mob-book-link">Book Now</a>
   </div>
 
   <!-- ══ HERO ══ -->
@@ -248,7 +262,7 @@
           <p>Tanise also leads specialty therapeutic groups focused on family healing, wounded identity, co-dependence recovery, and youth music-based groups. She serves as a certified clinical supervisor in Kansas and Missouri, as well as a consultant for emerging private practice clinicians.</p>
           <p><em>"I look forward to sharing genuine support alongside you on your journey."</em></p>
         </div>
-        <a href="mailto:tsmith@jecounselingkc.com?subject=Booking with Tanise Smith" class="btn-teal">Book with Tanise →</a>
+        <button class="btn-teal book-counselor-btn" data-counselor="Tanise Smith, MS, LCPC">Book with Tanise →</button>
       </div>
     </div>
 
@@ -272,7 +286,7 @@
           <p>She is also the author of <em>Anchored by Grace: Prayers for Keeping an Undivided Heart After Divorce</em>, a prayer journal supporting individuals navigating the emotional and spiritual journey of divorce.</p>
           <p><em>"I listen; I share empathy, understanding, and unconditional positive regard. My hope is to help clients draw from their strengths while cultivating an undivided heart."</em></p>
         </div>
-        <a href="mailto:tsmith@jecounselingkc.com?subject=Booking with Natasha Harris-Butler" class="btn-teal">Book with Natasha →</a>
+        <button class="btn-teal book-counselor-btn" data-counselor="Natasha Harris-Butler, LCSW">Book with Natasha →</button>
       </div>
     </div>
 
@@ -295,7 +309,7 @@
           <p>Debra views therapy as a guided conversation that creates space for growth, clarity, and meaningful change. Her approach is interactive, conversational, and grounded in Cognitive Behavioral Therapy (CBT).</p>
           <p><em>"My goal is to normalize the therapy process and provide a supportive environment where clients feel heard, empowered, and equipped to move forward with confidence."</em></p>
         </div>
-        <a href="mailto:tsmith@jecounselingkc.com?subject=Booking with Debra Richardson" class="btn-teal">Book with Debra →</a>
+        <button class="btn-teal book-counselor-btn" data-counselor="Debra Richardson, LSCSW">Book with Debra →</button>
       </div>
     </div>
 
@@ -320,7 +334,7 @@
           <p>Outside of work, Chris enjoys hiking, staying active outdoors, and playing just about any sport he can get his hands on.</p>
           <p><em>"Using a Cognitive-Behavioral approach, I help clients build self-awareness, manage anxiety, and develop practical tools that create lasting growth—both on and off the field."</em></p>
         </div>
-        <a href="mailto:tsmith@jecounselingkc.com?subject=Booking with Chris Gudjenov" class="btn-teal">Book with Chris →</a>
+        <button class="btn-teal book-counselor-btn" data-counselor="Chris Gudjenov, LPC">Book with Chris →</button>
       </div>
     </div>
 
@@ -344,7 +358,7 @@
           <p>She also works with women from diverse backgrounds and is especially passionate about providing Christian mentorship and coaching to women navigating life stress, marital challenges, and the journey of parenthood. As a wife of over 19 years and a mother of five, Cynthia brings both professional insight and personal experience to her work.</p>
           <p><em>"I am committed to helping clients build confidence, overcome mental and emotional barriers, and move forward with greater clarity and peace."</em></p>
         </div>
-        <a href="mailto:tsmith@jecounselingkc.com?subject=Booking with Cynthia Stokes" class="btn-teal">Book with Cynthia →</a>
+        <button class="btn-teal book-counselor-btn" data-counselor="Cynthia Stokes, LCC">Book with Cynthia →</button>
       </div>
     </div>
 
@@ -369,7 +383,7 @@
           <p>Jonathan is a devoted husband and proud father of four. He enjoys mixed martial arts, hiking, anime, and family time.</p>
           <p><em>"My approach is centered on creating a safe, encouraging space where you can reflect, realign, and move forward with confidence and hope."</em></p>
         </div>
-        <a href="mailto:tsmith@jecounselingkc.com?subject=Booking with Jonathan Slade" class="btn-teal">Book with Jonathan →</a>
+        <button class="btn-teal book-counselor-btn" data-counselor="Jonathan Slade, B.Th.">Book with Jonathan →</button>
       </div>
     </div>
   </section>
@@ -466,32 +480,35 @@
     <div class="modal">
       <button class="modal-x" aria-label="Close">✕</button>
       <div class="modal-h" id="bookingModalTitle">Book a Session</div>
-      <div class="modal-sub">Choose your counselor and preferred time below.</div>
+      <div class="modal-sub">Fill out the form below and we'll be in touch to confirm your appointment.</div>
+      <form name="booking" netlify netlify-honeypot="bot-field" id="bookingForm">
+      <input type="hidden" name="form-name" value="booking">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="fg">
         <label>Your Name</label>
         <div class="fg-row">
-          <input type="text" placeholder="First name" autocomplete="given-name">
-          <input type="text" placeholder="Last name" autocomplete="family-name">
+          <input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required>
+          <input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required>
         </div>
       </div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div>
-      <div class="fg"><label>Phone</label><input type="tel" placeholder="(816) 000-0000" autocomplete="tel"></div>
+      <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+      <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000" autocomplete="tel"></div>
       <div class="fg">
         <label>Select Counselor</label>
-        <select>
+        <select name="counselor" id="counselorSelect">
           <option value="">Choose a counselor...</option>
-          <option>Tanise Smith, MS, LCPC</option>
-          <option>Natasha Harris-Butler, LCSW</option>
-          <option>Debra Richardson, LSCSW</option>
-          <option>Chris Gudjenov, LPC</option>
-          <option>Cynthia Stokes, LCC</option>
-          <option>Jonathan Slade, B.Th.</option>
-          <option>No preference</option>
+          <option value="Tanise Smith, MS, LCPC">Tanise Smith, MS, LCPC</option>
+          <option value="Natasha Harris-Butler, LCSW">Natasha Harris-Butler, LCSW</option>
+          <option value="Debra Richardson, LSCSW">Debra Richardson, LSCSW</option>
+          <option value="Chris Gudjenov, LPC">Chris Gudjenov, LPC</option>
+          <option value="Cynthia Stokes, LCC">Cynthia Stokes, LCC</option>
+          <option value="Jonathan Slade, B.Th.">Jonathan Slade, B.Th.</option>
+          <option value="No preference">No preference</option>
         </select>
       </div>
       <div class="fg">
         <label>Service Type</label>
-        <select>
+        <select name="service">
           <option value="">Select a service...</option>
           <option>Individual Counseling</option>
           <option>Couples Therapy</option>
@@ -503,71 +520,13 @@
           <option>Group Therapy</option>
         </select>
       </div>
-      <div class="fg"><label>Message (Optional)</label><textarea placeholder="Brief description of what you'd like to work on..."></textarea></div>
-      <button class="btn-modal" data-form="booking">Request Appointment</button>
-      <div class="modal-foot">Already have an account? <a href="#" data-switch-to="signin">Sign in</a></div>
-    </div>
-  </div>
-
-  <!-- ══ SIGN IN MODAL ══ -->
-  <div class="modal-overlay" id="signinModal" role="dialog" aria-modal="true" aria-labelledby="signinModalTitle">
-    <div class="modal">
-      <button class="modal-x" aria-label="Close">✕</button>
-      <div class="modal-h" id="signinModalTitle">Welcome Back</div>
-      <div class="modal-sub">Sign in to your client portal to manage appointments.</div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div>
-      <div class="fg"><label>Password</label><input type="password" placeholder="••••••••" autocomplete="current-password"></div>
-      <button class="btn-modal" data-form="signin">Sign In</button>
-      <div class="modal-foot">
-        <a href="#">Forgot password?</a><br><br>
-        New here? <a href="#" data-switch-to="signup">Create an account</a>
+      <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Brief description of what you'd like to work on..."></textarea></div>
+      <button type="submit" class="btn-modal">Request Appointment</button>
+      </form>
+      <div id="bookingSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <p>Thank you! Your request has been received. We'll be in touch shortly.</p>
       </div>
-    </div>
-  </div>
-
-  <!-- ══ SIGN UP MODAL ══ -->
-  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupModalTitle">
-    <div class="modal">
-      <button class="modal-x" aria-label="Close">✕</button>
-      <div class="modal-h" id="signupModalTitle">Create Account</div>
-      <div class="modal-sub">Join the client portal to manage your sessions.</div>
-      <div class="fg">
-        <label>Name</label>
-        <div class="fg-row">
-          <input type="text" placeholder="First name" autocomplete="given-name">
-          <input type="text" placeholder="Last name" autocomplete="family-name">
-        </div>
-      </div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div>
-      <div class="fg"><label>Password</label><input type="password" placeholder="Min. 8 characters" autocomplete="new-password"></div>
-      <div class="fg"><label>Confirm Password</label><input type="password" placeholder="••••••••" autocomplete="new-password"></div>
-      <button class="btn-modal" data-form="signup">Create Account</button>
-      <div class="modal-foot">Already have an account? <a href="#" data-switch-to="signin">Sign in</a></div>
-    </div>
-  </div>
-
-  <!-- ══ LIVE CHAT ══ -->
-  <button class="chat-btn" id="chatToggleBtn" aria-label="Open live chat">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-  </button>
-  <div class="chat-win" id="chatWin" role="dialog" aria-label="Live chat">
-    <div class="chat-head">
-      <div class="chat-av" aria-hidden="true">🌿</div>
-      <div>
-        <h4>Journey Embraced Counseling</h4>
-        <div class="chat-status-row">
-          <span class="online-dot" aria-hidden="true"></span>
-          Usually replies within an hour
-        </div>
-      </div>
-    </div>
-    <div class="chat-msgs" id="chatMsgs" aria-live="polite">
-      <div class="msg in">Hi there! 👋 Welcome to Journey Embraced Counseling. How can we support you today?</div>
-      <div class="msg in">Feel free to ask about our counselors, services, or how to book a session.</div>
-    </div>
-    <div class="chat-input-row">
-      <input class="chat-input" id="chatIn" type="text" placeholder="Type a message..." aria-label="Chat message">
-      <button class="chat-send" id="chatSendBtn" aria-label="Send message">➤</button>
     </div>
   </div>
 

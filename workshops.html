@@ -346,11 +346,26 @@
       <div class="nav-item">
         <a href="blog.html" class="nav-link">Blog</a>
       </div>
+      <div class="nav-item" style="position:relative;">
+        <button class="nav-link" id="contactDropBtn" aria-expanded="false">
+          Contact Us
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+        </button>
+        <div class="contact-drop" id="contactDrop">
+          <div class="contact-drop-row contact-drop-row--email">
+            <span class="contact-drop-icon">📧</span>
+            <a href="mailto:cstokes@jecounselingkc.com">cstokes&#64;jecounselingkc.com</a>
+          </div>
+          <div class="contact-drop-row">
+            <span class="contact-drop-icon">📞</span>
+            <a href="tel:8169743389">816-974-3389</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="nav-right">
-      <a href="#" class="btn-nav-ghost" id="signinBtn">Sign In</a>
-      <a href="#" class="btn-nav-cta" id="bookNavBtn">Book a Session</a>
+<a href="#" class="btn-nav-cta" id="bookNavBtn">Book a Session</a>
       <button class="mob-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -366,8 +381,7 @@
     <a href="index.html#services">Services</a>
     <a href="workshops.html">Workshops</a>
     <a href="blog.html">Blog</a>
-    <a href="#" id="mobSignin">Sign In</a>
-    <a href="#" id="mobBook" class="mob-book-link">Book Now</a>
+<a href="#" id="mobBook" class="mob-book-link">Book Now</a>
   </div>
 
   <!-- ══ REGISTRATION OPEN BANNER ══ -->
@@ -629,12 +643,6 @@
       <div class="modal-foot">Already have an account? <a href="#" data-switch-to="signin">Sign in</a></div>
     </div>
   </div>
-
-  <!-- ══ SIGN IN MODAL ══ -->
-  <div class="modal-overlay" id="signinModal" role="dialog" aria-modal="true" aria-labelledby="signinModalTitle">
-    <div class="modal">
-      <button class="modal-x" aria-label="Close">✕</button>
-      <div class="modal-h" id="signinModalTitle">Welcome Back</div>
       <div class="modal-sub">Sign in to your client portal to manage appointments.</div>
       <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div>
       <div class="fg"><label>Password</label><input type="password" placeholder="••••••••" autocomplete="current-password"></div>
@@ -645,12 +653,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ══ SIGN UP MODAL ══ -->
-  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupModalTitle">
-    <div class="modal">
-      <button class="modal-x" aria-label="Close">✕</button>
-      <div class="modal-h" id="signupModalTitle">Create Account</div>
       <div class="modal-sub">Join the client portal to manage your sessions.</div>
       <div class="fg">
         <label>Name</label>
