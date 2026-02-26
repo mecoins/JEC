@@ -261,6 +261,76 @@
     drop.addEventListener('click', function (e) { e.stopPropagation(); });
   }
 
+
+  /* ─────────────────────────────────────────
+     WORKSHOP MODALS
+  ───────────────────────────────────────── */
+
+  function initWorkshopModals() {
+    // Connected workshop button
+    var connectedBtn = document.getElementById('connectedBtn');
+    if (connectedBtn) {
+      connectedBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal('connected');
+      });
+    }
+
+    // Recover Well workshop button
+    var recoverBtn = document.getElementById('recoverBtn');
+    if (recoverBtn) {
+      recoverBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal('recover');
+      });
+    }
+
+    // Connected form submission
+    var connectedForm = document.getElementById('connectedForm');
+    if (connectedForm) {
+      connectedForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var submitBtn = connectedForm.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(connectedForm)).toString()
+        }).then(function () {
+          connectedForm.style.display = 'none';
+          var success = document.getElementById('connectedSuccess');
+          if (success) success.style.display = 'block';
+          setTimeout(function () { closeModal('connected'); }, 4000);
+        }).catch(function () {
+          if (submitBtn) { submitBtn.textContent = 'Reserve My Spot'; submitBtn.disabled = false; }
+          alert('There was a problem. Please call 816-974-3389 or email cstokes@jecounselingkc.com');
+        });
+      });
+    }
+
+    // Recover Well form submission
+    var recoverForm = document.getElementById('recoverForm');
+    if (recoverForm) {
+      recoverForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var submitBtn = recoverForm.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(recoverForm)).toString()
+        }).then(function () {
+          recoverForm.style.display = 'none';
+          var success = document.getElementById('recoverSuccess');
+          if (success) success.style.display = 'block';
+          setTimeout(function () { closeModal('recover'); }, 4000);
+        }).catch(function () {
+          if (submitBtn) { submitBtn.textContent = 'Reserve My Spot'; submitBtn.disabled = false; }
+          alert('There was a problem. Please call 816-974-3389 or email cstokes@jecounselingkc.com');
+        });
+      });
+    }
+  }
   /* ─────────────────────────────────────────
      SCROLL REVEAL
   ───────────────────────────────────────── */
@@ -289,6 +359,7 @@
     initTeamDropdown();
     initContactDropdown();
     initMobileMenu();
+    initWorkshopModals();
     initScrollReveal();
   });
 
