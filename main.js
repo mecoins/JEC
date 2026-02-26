@@ -169,21 +169,29 @@
   ───────────────────────────────────────── */
 
   function initContactDropdown() {
-    var btn = document.getElementById('contactDropBtn');
-    if (!btn) return;
+    var btn  = document.getElementById('contactDropBtn');
+    var drop = document.getElementById('contactDrop');
+    if (!btn || !drop) return;
 
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
-      var item   = btn.closest('.nav-item');
-      var isOpen = item.classList.contains('open');
-
+      var isOpen = drop.classList.contains('contact-drop--open');
+      // Close team dropdown
       closeAllDropdowns();
-
       if (!isOpen) {
-        item.classList.add('open');
+        drop.classList.add('contact-drop--open');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
+
+    // Close on outside click
+    document.addEventListener('click', function () {
+      drop.classList.remove('contact-drop--open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+
+    // Prevent clicks inside dropdown from bubbling and closing it
+    drop.addEventListener('click', function (e) { e.stopPropagation(); });
   }
 
   function closeAllDropdowns() {

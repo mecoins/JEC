@@ -1292,24 +1292,24 @@ footer {
 /* ── Contact Us Dropdown ── */
 .contact-drop {
   position: absolute;
-  top: var(--nav-height);
-  left: 50%;
-  transform: translateX(-50%) translateY(-6px);
+  top: calc(var(--nav-height) + 2px);
+  right: 0;
   background: #ffffff;
   border: 1px solid var(--stone);
   border-top: 2px solid var(--teal);
   padding: 1.25rem 1.5rem;
-  min-width: 260px;
+  min-width: 270px;
   opacity: 0;
   pointer-events: none;
+  transform: translateY(-6px);
   transition: opacity 0.2s ease, transform 0.2s ease;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  z-index: 200;
 }
-.nav-item.open .contact-drop {
+.contact-drop--open {
   opacity: 1;
   pointer-events: all;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 .contact-drop-row {
   display: flex;
