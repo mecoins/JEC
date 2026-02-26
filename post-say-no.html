@@ -194,6 +194,28 @@
     <div class="footer-bottom"><p>&copy; 2025 Journey Embraced Counseling LLC. All rights reserved.</p><div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
   </footer>
 
-  <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle"><div class="modal"><button class="modal-x" aria-label="Close">✕</button><div class="modal-h" id="bookingModalTitle">Book a Session</div><div class="modal-sub">Choose your counselor and preferred time below.</div><div class="fg"><label>Your Name</label><div class="fg-row"><input type="text" placeholder="First name" autocomplete="given-name"><input type="text" placeholder="Last name" autocomplete="family-name"></div></div><div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div><div class="fg"><label>Phone</label><input type="tel" placeholder="(816) 000-0000" autocomplete="tel"></div><div class="fg"><label>Select Counselor</label><select><option value="">Choose a counselor...</option><option>Tanise Smith, MS, LCPC</option><option>Natasha Harris-Butler, LCSW</option><option>Debra Richardson, LSCSW</option><option>Chris Gudjenov, LPC</option><option>Cynthia Stokes, LCC</option><option>Jonathan Slade, B.Th.</option><option>No preference</option></select></div><div class="fg"><label>Service Type</label><select><option value="">Select a service...</option><option>Individual Counseling</option><option>Couples Therapy</option><option>Adolescent Support</option><option>Faith-Based Counseling</option><option>Life Coaching</option><option>Narcissistic Abuse Recovery</option><option>Men's Mental Health</option><option>Group Therapy</option></select></div><div class="fg"><label>Message (Optional)</label><textarea placeholder="Brief description of what you'd like to work on..."></textarea></div><button class="btn-modal" data-form="booking">Request Appointment</button><div class="modal-foot">Already have an account? <a href="#" data-switch-to="signin">Sign in</a></div></div></div>
-  
-  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupModalTitle"><div class="modal"><button class="modal-x" aria-label="Close">✕</button><div class="modal-h" id="signupModalTitle">Create Account</div><div class="modal-sub">Join the client portal to manage your sessions.</div><div class="fg"><label>Name</label><div class="fg-row"><input type="text" placeholder="First name" autocomplete="given-name"><input type="text" placeholder="Last name" autocomplete="family-name"></div></div><div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div><div class="fg"><label>Password</label><input type="password" placeholder="Min. 8 characters" autocomplete="new-password"></div><div class="fg"><label>Confirm Password</label><input type="password" placeholder="••••••••" autocomplete="new-password"></div><button class="btn-modal" data-form="signup">Create Account</button><div class="modal-foot">Already have an account? <a href="#" data-switch-to="signin">Sign in</a></div></div></div><div class="chat-msgs" id="chatMsgs" aria-live="polite"><div class="msg in">Hi there! 👋 Welcome to Journey Embraced Counseling. How can we support you today?</div><div class="msg in">Feel free to ask about our counselors, services, or how to book a session.</div></div><div class="chat-input-row"><input class="chat-input" id="chatIn" type="text" placeholde
+    <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="modal">
+      <button class="modal-x" aria-label="Close">✕</button>
+      <div class="modal-h" id="bookingModalTitle">Book a Session</div>
+      <div class="modal-sub">Fill out the form below and we'll be in touch to confirm your appointment.</div>
+      <form name="booking" netlify netlify-honeypot="bot-field" id="bookingForm">
+        <input type="hidden" name="form-name" value="booking">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="fg"><label>Your Name</label><div class="fg-row"><input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required><input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required></div></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000" autocomplete="tel"></div>
+        <div class="fg"><label>Select Counselor</label><select name="counselor" id="counselorSelect"><option value="">Choose a counselor...</option><option value="Tanise Smith, MS, LCPC">Tanise Smith, MS, LCPC</option><option value="Natasha Harris-Butler, LCSW">Natasha Harris-Butler, LCSW</option><option value="Debra Richardson, LSCSW">Debra Richardson, LSCSW</option><option value="Chris Gudjenov, LPC">Chris Gudjenov, LPC</option><option value="Cynthia Stokes, LCC">Cynthia Stokes, LCC</option><option value="Jonathan Slade, B.Th.">Jonathan Slade, B.Th.</option><option value="No preference">No preference</option></select></div>
+        <div class="fg"><label>Service Type</label><select name="service"><option value="">Select a service...</option><option>Individual Counseling</option><option>Couples Therapy</option><option>Adolescent Support</option><option>Faith-Based Counseling</option><option>Life Coaching</option><option>Narcissistic Abuse Recovery</option><option>Men's Mental Health</option><option>Group Therapy</option></select></div>
+        <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Brief description of what you'd like to work on..."></textarea></div>
+        <button type="submit" class="btn-modal">Request Appointment</button>
+      </form>
+      <div id="bookingSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <p>Thank you! Your request has been received. We'll be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
