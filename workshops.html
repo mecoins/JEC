@@ -354,7 +354,7 @@
         <div class="contact-drop" id="contactDrop">
           <div class="contact-drop-row contact-drop-row--email">
             <span class="contact-drop-icon">📧</span>
-            <a href="mailto:cstokes@jecounselingkc.com">cstokes&#64;jecounselingkc.com</a>
+            <a href="/cdn-cgi/l/email-protection#f59686819a9e9086b59f90969a809b8690999c9b929e96db969a98">cstokes&#64;jecounselingkc.com</a>
           </div>
           <div class="contact-drop-row">
             <span class="contact-drop-icon">📞</span>
@@ -429,7 +429,7 @@
         </div>
 
         <div style="margin-top: 40px;">
-          <a href="/cdn-cgi/l/email-protection#661207080f1503260c030509130815030a0f08010d054805090b591513040c0305125b3403010f151203140f08014354560009144354562509080803051203024355274354562b09120e03144b220713010e120314435456524b36071412435456350b070a0a4354562114091316435456231e1603140f03080503" class="btn-register">Reserve Your Spot</a>
+          <button class="btn-register" onclick="document.getElementById('connectedModal').classList.add('open');document.body.style.overflow='hidden'">Reserve Your Spot</button>
         </div>
 
         <p style="margin-top: 20px; font-size: 0.85rem; color: #888;">
@@ -473,7 +473,7 @@
         </div>
 
         <div style="margin-top:40px;">
-          <a href="/cdn-cgi/l/email-protection#3145505f584254715b54525e445f42545d585f565a521f525e5c0e4244535b5452450c6354565842455443585f56140301575e431403016354525e47544314030166545d5d1402701403017f504352584242584245585214030170534442541403016354525e4754434814030176435e4441" class="btn-register">Reserve Your Spot</a>
+          <button class="btn-register" onclick="document.getElementById('recoverModal').classList.add('open');document.body.style.overflow='hidden'">Reserve Your Spot</button>
         </div>
 
         <p style="margin-top:20px;font-size:.85rem;color:#888;">
@@ -637,64 +637,123 @@
       <div class="modal-foot">Already have an account? <a href="#" data-switch-to="signin">Sign in</a></div>
     </div>
   </div>
-
-  <!-- ══ SIGN IN MODAL ══ -->
-  <div class="modal-overlay" id="signinModal" role="dialog" aria-modal="true" aria-labelledby="signinModalTitle">
-    <div class="modal">
-      <button class="modal-x" aria-label="Close">✕</button>
-      <div class="modal-h" id="signinModalTitle">Welcome Back</div>
-      <div class="modal-sub">Sign in to your client portal to manage appointments.</div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div>
-      <div class="fg"><label>Password</label><input type="password" placeholder="••••••••" autocomplete="current-password"></div>
-      <button class="btn-modal" data-form="signin">Sign In</button>
-      <div class="modal-foot">
-        <a href="#">Forgot password?</a><br><br>
-        New here? <a href="#" data-switch-to="signup">Create an account</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ SIGN UP MODAL ══ -->
-  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupModalTitle">
-    <div class="modal">
-      <button class="modal-x" aria-label="Close">✕</button>
-      <div class="modal-h" id="signupModalTitle">Create Account</div>
-      <div class="modal-sub">Join the client portal to manage your sessions.</div>
-      <div class="fg">
-        <label>Name</label>
-        <div class="fg-row">
-          <input type="text" placeholder="First name" autocomplete="given-name">
-          <input type="text" placeholder="Last name" autocomplete="family-name">
-        </div>
-      </div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" autocomplete="email"></div>
-      <div class="fg"><label>Password</label><input type="password" placeholder="Min. 8 characters" autocomplete="new-password"></div>
-      <div class="fg"><label>Confirm Password</label><input type="password" placeholder="••••••••" autocomplete="new-password"></div>
-      <button class="btn-modal" data-form="signup">Create Account</button>
-      <div class="modal-foot">Already have an account? <a href="#" data-switch-to="signin">Sign in</a></div>
-    </div>
-  </div>
-
-  <!-- ══ LIVE CHAT ══ -->
-    <div class="chat-msgs" id="chatMsgs" aria-live="polite">
-      <div class="msg in">Hi there! 👋 Welcome to Journey Embraced Counseling. How can we support you today?</div>
-      <div class="msg in">Feel free to ask about our counselors, services, or how to book a session.</div>
-    </div>
     <div class="chat-input-row">
       <input class="chat-input" id="chatIn" type="text" placeholder="Type a message..." aria-label="Chat message">
       <button class="chat-send" id="chatSendBtn" aria-label="Send message">➤</button>
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
-  <script>
-    // ── Testimonial carousel ──
-    (function () {
-      const slides = document.querySelectorAll('.test-slide');
-      const dots   = document.querySelectorAll('.test-dot');
-      let current  = 0;
-      let timer;
+  <!-- ══ WORKSHOP MODAL 1: CONNECTED ══ -->
+  <div class="modal-overlay" id="connectedModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal-x" onclick="document.getElementById('connectedModal').classList.remove('open');document.body.style.overflow=''">✕</button>
+      <div class="modal-h">Reserve Your Spot</div>
+      <div class="modal-sub">Connected: Strengthening the Mother-Daughter Bond<br>March 28 – April 18 · 11:00 AM–12:30 PM · $320 per pair</div>
+      <form name="workshop-connected" netlify netlify-honeypot="bot-field" id="connectedForm">
+        <input type="hidden" name="form-name" value="workshop-connected">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="fg"><label>Your Name</label><div class="fg-row">
+          <input type="text" name="first-name" placeholder="First name" required>
+          <input type="text" name="last-name" placeholder="Last name" required>
+        </div></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000"></div>
+        <div class="fg"><label>Number Attending (pairs)</label>
+          <select name="attending">
+            <option value="">Select...</option>
+            <option value="1 pair">1 pair</option>
+            <option value="2 pairs">2 pairs</option>
+            <option value="3 pairs">3 pairs</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Any questions or notes for us..."></textarea></div>
+        <button type="submit" class="btn-modal">Reserve My Spot</button>
+      </form>
+      <div id="connectedSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">&#10003;</div>
+        <p>Thank you! Your spot request has been received. We will be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
 
-      function goTo(n) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active')
+  <!-- ══ WORKSHOP MODAL 2: RECOVER WELL ══ -->
+  <div class="modal-overlay" id="recoverModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal-x" onclick="document.getElementById('recoverModal').classList.remove('open');document.body.style.overflow=''">✕</button>
+      <div class="modal-h">Reserve Your Spot</div>
+      <div class="modal-sub">Recover Well: Narcissistic Abuse Recovery Group<br>Mar 14 – Apr 4 · $45/session · $180 due at registration</div>
+      <form name="workshop-recover-well" netlify netlify-honeypot="bot-field" id="recoverForm">
+        <input type="hidden" name="form-name" value="workshop-recover-well">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="fg"><label>Your Name</label><div class="fg-row">
+          <input type="text" name="first-name" placeholder="First name" required>
+          <input type="text" name="last-name" placeholder="Last name" required>
+        </div></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000"></div>
+        <div class="fg"><label>Preferred Time Slot</label>
+          <select name="time-slot" required>
+            <option value="">Select a time slot...</option>
+            <option value="Group 1: 9:00 AM - 10:30 AM">Group 1: 9:00 AM - 10:30 AM</option>
+            <option value="Group 2: 1:00 PM - 2:30 PM">Group 2: 1:00 PM - 2:30 PM</option>
+          </select>
+        </div>
+        <div class="fg"><label>Number Attending</label>
+          <select name="attending">
+            <option value="">Select...</option>
+            <option value="1 person">1 person</option>
+            <option value="2 people">2 people</option>
+            <option value="3 people">3 people</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Any questions or notes for us..."></textarea></div>
+        <button type="submit" class="btn-modal">Reserve My Spot</button>
+      </form>
+      <div id="recoverSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">&#10003;</div>
+        <p>Thank you! Your spot request has been received. We will be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function () {
+    // Carousel
+    var slides = document.querySelectorAll('.test-slide');
+    var dots   = document.querySelectorAll('.test-dot');
+    var cur = 0;
+    function goTo(n) {
+      slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+      cur = n;
+      slides[cur].classList.add('active'); dots[cur].classList.add('active');
+    }
+    dots.forEach(function(d) { d.addEventListener('click', function() { goTo(+d.getAttribute('data-index')); }); });
+    if (slides.length) setInterval(function() { goTo((cur+1) % slides.length); }, 5000);
+
+    // Workshop form submissions
+    function bindForm(fId, sId, mId, lbl) {
+      var f = document.getElementById(fId);
+      if (!f) return;
+      f.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var b = f.querySelector('button[type="submit"]');
+        if (b) { b.textContent = 'Sending...'; b.disabled = true; }
+        fetch('/', { method: 'POST', headers: {'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(f)).toString() })
+          .then(function() {
+            f.style.display = 'none';
+            var s = document.getElementById(sId); if (s) s.style.display = 'block';
+            setTimeout(function() {
+              var m = document.getElementById(mId);
+              if (m) { m.classList.remove('open'); document.body.style.overflow = ''; f.reset(); f.style.display = ''; s.style.display = 'none'; }
+            }, 4000);
+          })
+          .catch(function() { if (b) { b.textContent = lbl; b.disabled = false; } alert('There was a problem. Please call 816-974-3389.'); });
+      });
+    }
+    bindForm('connectedForm', 'connectedSuccess', 'connectedModal', 'Reserve My Spot');
+    bindForm('recoverForm',   'recoverSuccess',   'recoverModal',   'Reserve My Spot');
+  })();
+  </script>
+</body>
+</html>
