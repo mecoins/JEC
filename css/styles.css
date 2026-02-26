@@ -63,8 +63,10 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);over
   text-transform:uppercase;color:var(--ink);background:var(--mint);
   border:none;padding:.8rem 2rem;cursor:pointer;text-decoration:none;
   display:inline-block;transition:background .2s,transform .2s;
+  -webkit-appearance:none;appearance:none;line-height:normal;vertical-align:middle;
 }
 .btn-teal:hover{background:var(--mint-light);transform:translateY(-1px)}
+button.btn-teal{font-size:.75rem;font-weight:600;letter-spacing:.1em;}
 
 .btn-white-solid{
   font-family:'Jost',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.16em;
