@@ -30,6 +30,10 @@
     if (!overlay) return;
     overlay.classList.remove('open');
     document.body.style.overflow = '';
+    var form = overlay.querySelector('form');
+    var success = overlay.querySelector('.modal-success');
+    if (form) { form.reset(); form.style.display = ''; }
+    if (success) success.style.display = 'none';
   }
 
   /**
@@ -61,19 +65,28 @@
       });
     });
 
-    // Submit buttons
-    document.querySelectorAll('.btn-modal').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var form = btn.getAttribute('data-form');
-        var messages = {
-          booking: 'Appointment requested! In a live site this connects to your scheduling system.',
-          signin:  'Signed in successfully!',
-          signup:  'Account created successfully!'
-        };
-        alert(messages[form] || 'Submitted!');
-        closeModal(form);
+    // Netlify form submission
+    var bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var submitBtn = bookingForm.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(bookingForm)).toString()
+        }).then(function () {
+          bookingForm.style.display = 'none';
+          var success = document.getElementById('bookingSuccess');
+          if (success) success.style.display = 'block';
+          setTimeout(function () { closeModal('booking'); }, 4000);
+        }).catch(function () {
+          if (submitBtn) { submitBtn.textContent = 'Request Appointment'; submitBtn.disabled = false; }
+          alert('There was a problem. Please call 816-974-3389 or email cstokes@jecounselingkc.com');
+        });
       });
-    });
+    }
 
     // Switch modal links (e.g. "Sign in" / "Create an account")
     document.querySelectorAll('[data-switch-to]').forEach(function (link) {
@@ -87,7 +100,7 @@
       });
     });
 
-    // Open "booking" modal triggers
+    // Generic booking triggers — no pre-selection
     var bookingTriggers = [
       'bookNavBtn', 'heroBookBtn', 'welcomeBookBtn', 'teamBookBtn', 'bannerBookBtn'
     ];
@@ -96,34 +109,31 @@
       if (el) {
         el.addEventListener('click', function (e) {
           e.preventDefault();
+          var select = document.getElementById('counselorSelect');
+          if (select) select.value = '';
           openModal('booking');
         });
       }
     });
 
-    // Sign In trigger
-    var signinBtn = document.getElementById('signinBtn');
-    if (signinBtn) {
-      signinBtn.addEventListener('click', function (e) {
+    // Individual counselor buttons — pre-select counselor
+    document.querySelectorAll('.book-counselor-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
         e.preventDefault();
-        openModal('signin');
+        var counselor = btn.getAttribute('data-counselor');
+        var select = document.getElementById('counselorSelect');
+        if (select && counselor) select.value = counselor;
+        openModal('booking');
       });
-    }
+    });
 
-    // Mobile menu sign in / book now
-    var mobSignin = document.getElementById('mobSignin');
-    if (mobSignin) {
-      mobSignin.addEventListener('click', function (e) {
-        e.preventDefault();
-        closeMob();
-        openModal('signin');
-      });
-    }
     var mobBook = document.getElementById('mobBook');
     if (mobBook) {
       mobBook.addEventListener('click', function (e) {
         e.preventDefault();
         closeMob();
+        var select = document.getElementById('counselorSelect');
+        if (select) select.value = '';
         openModal('booking');
       });
     }
@@ -221,66 +231,34 @@
   }
 
   /* ─────────────────────────────────────────
-     LIVE CHAT
+     CONTACT US DROPDOWN
   ───────────────────────────────────────── */
 
-  var chatOpen = false;
-  var replyIndex = 0;
-  var chatReplies = [
-    'Thank you for reaching out! For scheduling, please call 816-974-3389 or use the Book a Session button.',
-    'We serve Missouri and Kansas clients in-person and virtually. Would you like to learn more?',
-    'Each counselor has different specialties. Would you like help finding the best fit for you?',
-    'We offer individual counseling, couples therapy, life coaching, and more. What are you looking for?',
-    'Feel free to email tanise@jecounselingkc.com or call 816-974-3389 and we will get back to you quickly!'
-  ];
+  function initContactDropdown() {
+    var btn  = document.getElementById('contactDropBtn');
+    var drop = document.getElementById('contactDrop');
+    if (!btn || !drop) return;
 
-  function toggleChat() {
-    chatOpen = !chatOpen;
-    var win = document.getElementById('chatWin');
-    if (win) win.classList.toggle('open', chatOpen);
-    if (chatOpen) {
-      var input = document.getElementById('chatIn');
-      if (input) input.focus();
-    }
-  }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = drop.classList.contains('contact-drop--open');
+      // Close team dropdown first
+      document.querySelectorAll('.nav-item.open').forEach(function(el){ el.classList.remove('open'); });
+      if (!isOpen) {
+        drop.classList.add('contact-drop--open');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        drop.classList.remove('contact-drop--open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
 
-  function sendChat() {
-    var input = document.getElementById('chatIn');
-    var msgs  = document.getElementById('chatMsgs');
-    if (!input || !msgs) return;
+    document.addEventListener('click', function () {
+      drop.classList.remove('contact-drop--open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
 
-    var text = input.value.trim();
-    if (!text) return;
-
-    var outDiv = document.createElement('div');
-    outDiv.className   = 'msg out';
-    outDiv.textContent = text;
-    msgs.appendChild(outDiv);
-    input.value = '';
-    msgs.scrollTop = msgs.scrollHeight;
-
-    setTimeout(function () {
-      var inDiv = document.createElement('div');
-      inDiv.className   = 'msg in';
-      inDiv.textContent = chatReplies[replyIndex % chatReplies.length];
-      replyIndex++;
-      msgs.appendChild(inDiv);
-      msgs.scrollTop = msgs.scrollHeight;
-    }, 900);
-  }
-
-  function initChat() {
-    var toggleBtn = document.getElementById('chatToggleBtn');
-    var sendBtn   = document.getElementById('chatSendBtn');
-    var input     = document.getElementById('chatIn');
-
-    if (toggleBtn) toggleBtn.addEventListener('click', toggleChat);
-    if (sendBtn)   sendBtn.addEventListener('click', sendChat);
-    if (input) {
-      input.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') sendChat();
-      });
-    }
+    drop.addEventListener('click', function (e) { e.stopPropagation(); });
   }
 
   /* ─────────────────────────────────────────
@@ -309,8 +287,8 @@
   document.addEventListener('DOMContentLoaded', function () {
     initModals();
     initTeamDropdown();
+    initContactDropdown();
     initMobileMenu();
-    initChat();
     initScrollReveal();
   });
 
