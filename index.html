@@ -86,7 +86,7 @@
         <div class="contact-drop" id="contactDrop">
           <div class="contact-drop-row contact-drop-row--email">
             <span class="contact-drop-icon">📧</span>
-            <a href="mailto:cstokes@jecounselingkc.com">cstokes&#64;jecounselingkc.com</a>
+            <a href="mailto:tanise@jecounselingkc.com">cstokes&#64;jecounselingkc.com</a>
           </div>
           <div class="contact-drop-row">
             <span class="contact-drop-icon">📞</span>
@@ -458,7 +458,7 @@
         <h5>Contact</h5>
         <p>12480 W. 62 Terr.<br>Shawnee, KS 66216</p>
         <p><a href="tel:8169743389">816-974-3389</a></p>
-        <p><a href="mailto:tanise@jecounselingkc.com">tanise@jecounselingkc.com</a></p>
+        <p><a href="mailto:tanise@jecounselingkc.com">tanise&#64;jecounselingkc.com</a></p>
       </div>
     </div>
     <div class="footer-pt-badge">
@@ -529,27 +529,22 @@
       </div>
     </div>
   </div>
-
   <script src="js/main.js"></script>
   <script>
-    (function () {
-      const slides = document.querySelectorAll('.test-slide');
-      const dots   = document.querySelectorAll('.test-dot');
-      let current  = 0;
-      let timer;
-      function goTo(n) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (n + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }
-      function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => { clearInterval(timer); goTo(parseInt(dot.dataset.index)); startAuto(); });
-      });
-      startAuto();
-    })();
+  (function () {
+    var slides = document.querySelectorAll('.test-slide');
+    var dots   = document.querySelectorAll('.test-dot');
+    var cur    = 0;
+    function goTo(n) {
+      slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+      cur = n;
+      slides[cur].classList.add('active'); dots[cur].classList.add('active');
+    }
+    dots.forEach(function(d) {
+      d.addEventListener('click', function() { goTo(+d.getAttribute('data-index')); });
+    });
+    if (slides.length) setInterval(function() { goTo((cur + 1) % slides.length); }, 5000);
+  })();
   </script>
 </body>
 </html>
