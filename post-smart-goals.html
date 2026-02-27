@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wanting Your Goals to Stick? Make them SMART! — Journey Embraced Counseling Blog">
+  <title>Wanting Your Goals to Stick? Make them SMART! | JEC Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .post-hero{background:var(--ink);padding:140px 24px 60px;text-align:center;position:relative;overflow:hidden}
+    .post-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,212,168,.15) 0%,transparent 60%)}
+    .post-back{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);text-decoration:none;margin-bottom:24px;position:relative}
+    .post-back:hover{color:var(--mint-light)}
+    .post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1.2;max-width:800px;margin:0 auto 24px;position:relative}
+    .post-meta{display:flex;align-items:center;justify-content:center;gap:12px;position:relative}
+    .post-meta-author-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,212,168,.4)}
+    .post-meta-name{font-family:'Jost',sans-serif;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.85)}
+    .post-meta-sep{color:rgba(255,255,255,.25)}
+    .post-meta-date{font-family:'Jost',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5)}
+    .post-meta-read{font-family:'Jost',sans-serif;font-size:.8rem;color:var(--mint)}
+    .post-hero-img{width:100%;max-width:900px;margin:48px auto 0;display:block;border-radius:4px;object-fit:cover;max-height:500px}
+    .post-body-wrap{max-width:760px;margin:0 auto;padding:64px 24px}
+    .post-body{font-family:'Jost',sans-serif;font-size:.97rem;line-height:1.9;color:#444}
+    .post-body p{margin-bottom:1.4rem}
+    .post-body h2,.post-body h3{font-family:'Playfair Display',serif;color:var(--ink);margin:2.5rem 0 1rem;line-height:1.3}
+    .post-body h2{font-size:1.5rem}
+    .post-body h3{font-size:1.2rem}
+    .post-body strong{color:var(--ink);font-weight:600}
+    .post-body em{font-style:italic;color:var(--purple)}
+    .post-body ul{margin:1rem 0 1.4rem 1.5rem}
+    .post-body ul li{margin-bottom:.6rem;line-height:1.7}
+    .post-body blockquote{border-left:3px solid var(--mint);padding:.75rem 1.25rem;margin:1.5rem 0;background:#f7fffe;font-style:italic;color:var(--mist)}
+    .smart-highlight{background:var(--warm);border-left:4px solid var(--purple);padding:1rem 1.5rem;margin:1.5rem 0;border-radius:0 4px 4px 0}
+    .smart-highlight p{margin:0;color:var(--ink)}
+    .post-tags{margin-top:48px;padding-top:32px;border-top:1px solid var(--stone)}
+    .post-tags-label{font-family:'Jost',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--mist);margin-bottom:12px}
+    .post-tag{display:inline-block;font-family:'Jost',sans-serif;font-size:.72rem;background:var(--warm);color:var(--purple);border:1px solid rgba(180,79,212,.2);padding:.25rem .75rem;border-radius:20px;margin:0 4px 6px 0;text-decoration:none}
+    .post-tag:hover{background:rgba(180,79,212,.08)}
+    .recent-posts{background:#faf9f7;padding:64px 24px}
+    .recent-posts-inner{max-width:900px;margin:0 auto}
+    .recent-posts h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--ink);margin-bottom:32px}
+    .recent-posts h2 em{font-style:italic;color:var(--purple)}
+    .recent-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .recent-card{display:flex;gap:16px;text-decoration:none;background:#fff;padding:16px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .2s}
+    .recent-card:hover{transform:translateY(-2px)}
+    .recent-card img{width:90px;height:68px;object-fit:cover;border-radius:2px;flex-shrink:0}
+    .recent-card-title{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.3}
+    .recent-card-author{font-family:'Jost',sans-serif;font-size:.72rem;color:var(--mist);margin-top:6px}
+    @media(max-width:600px){.recent-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <nav id="mainNav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Journey Embraced Counseling"></a>
+    <div class="nav-center">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="index.html#about" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <button class="nav-link" id="teamDropBtn" aria-expanded="false" aria-haspopup="true">Our Team<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
+        <div class="mega-drop" role="menu">
+          <a class="drop-card" href="index.html#tanise" role="menuitem"><img class="drop-thumb" src="images/tanise.jpg" alt="Tanise Smith"><div class="drop-info"><div class="drop-name">Tanise Smith</div><div class="drop-role">MS, LCPC · Founder</div></div></a>
+          <a class="drop-card" href="index.html#natasha" role="menuitem"><img class="drop-thumb" src="images/natasha.jpg" alt="Natasha Harris-Butler"><div class="drop-info"><div class="drop-name">Natasha Harris-Butler</div><div class="drop-role">LCSW, LSCSW</div></div></a>
+          <a class="drop-card" href="index.html#debra" role="menuitem"><img class="drop-thumb" src="images/debra.jpg" alt="Debra Richardson"><div class="drop-info"><div class="drop-name">Debra Richardson</div><div class="drop-role">LSCSW, LCSW</div></div></a>
+          <a class="drop-card" href="index.html#chris" role="menuitem"><img class="drop-thumb" src="images/chris.jpg" alt="Chris Gudjenov"><div class="drop-info"><div class="drop-name">Chris Gudjenov</div><div class="drop-role">LPC · Athletes & Men</div></div></a>
+          <a class="drop-card" href="index.html#cynthia" role="menuitem"><img class="drop-thumb" src="images/cynthia.jpg" alt="Cynthia Stokes"><div class="drop-info"><div class="drop-name">Cynthia Stokes</div><div class="drop-role">LCC · Life Coach</div></div></a>
+          <a class="drop-card" href="index.html#jonathan" role="menuitem"><img class="drop-thumb" src="images/jonathan.jpg" alt="Jonathan Slade"><div class="drop-info"><div class="drop-name">Jonathan Slade</div><div class="drop-role">B.Th. · Pastoral Coach</div></div></a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="index.html#services" class="nav-link">Services</a></div>
+      <div class="nav-item"><a href="workshops.html" class="nav-link">Workshops</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+    </div>
+    <div class="nav-right">
+<a href="#" class="btn-nav-cta" id="bookNavBtn">Book a Session</a>
+      <button class="mob-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Mobile navigation">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#counselors">Our Team</a><a href="index.html#services">Services</a><a href="workshops.html">Workshops</a><a href="blog.html">Blog</a><a href="#" id="mobBook" class="mob-book-link">Book Now</a>
+  </div>
+
+  <section class="post-hero">
+    <a href="blog.html" class="post-back">← All Posts</a>
+    <h1>Wanting Your Goals to Stick? Make them SMART!</h1>
+    <div class="post-meta">
+      <img class="post-meta-author-img" src="https://static.wixstatic.com/media/f3df2a_ed8cdbc0320a438393f0426898f3b0ae~mv2.jpg/v1/fill/w_64,h_64,al_c,q_80,enc_avif,quality_auto/f3df2a_ed8cdbc0320a438393f0426898f3b0ae~mv2.jpg" alt="Cynthia Stokes">
+      <span class="post-meta-name">Cynthia Stokes, LCC</span>
+      <span class="post-meta-sep">·</span>
+      <span class="post-meta-date">Dec 19, 2024</span>
+      <span class="post-meta-sep">·</span>
+      <span class="post-meta-read">3 min read</span>
+    </div>
+    <img class="post-hero-img" src="https://static.wixstatic.com/media/nsplsh_63595f54434b723562656b~mv2.jpg/v1/fill/w_980,h_677,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_63595f54434b723562656b~mv2.jpg" alt="A dart sticking to a target">
+  </section>
+
+  <div class="post-body-wrap">
+    <div class="post-body">
+
+      <p>I'm not saying the goals you are choosing aren't good ones, they just aren't SMART. Let me explain further. Let's say you have a goal to limit your social media intake. Yes, this is a growing need as more and more are realizing how much their attention is given to their screens. To achieve this goal you write down something like <em>"I will stop getting on social media every night to limit my intake."</em> Okay, that's a good start. It's a great goal to shoot for but will it stick? Did you give yourself specific parameters to go by?</p>
+
+      <p>Let's talk about the aspects that can make our goals smart. <strong>SMART</strong> goals are: <strong>S</strong>pecific, <strong>M</strong>easurable, <strong>A</strong>chievable, <strong>R</strong>elevant and <strong>T</strong>ime-Bound.</p>
+
+      <h2>Specific</h2>
+      <p>When determining what your goal is, think about the <strong>specifics</strong>. When we define goals clearly, there is no question about what needs to be done. When thinking of specifics try to answer the <em>who</em>, <em>what</em> and <em>why</em> questions. So far we know the who — yourself. We also know the what — limiting your social media intake. We still need the why.</p>
+      <div class="smart-highlight"><p><em>"I will limit surfing through online communities for better health and focus."</em></p></div>
+
+      <h2>Measurable</h2>
+      <p>Making your goals <strong>measurable</strong> will keep you motivated and excited as you see yourself progressing. This also helps you keep track of the <em>how much</em> and <em>how many's</em>.</p>
+      <div class="smart-highlight"><p><em>"I will limit surfing through online communities to only three days a week, no longer than thirty minutes at a time, for better health and focus."</em></p></div>
+      <p>You have now made your goal quantifiable by adding a limit per week and the time allotted. Keeping track of your progress just got easier.</p>
+
+      <h2>Achievable</h2>
+      <p>Making sure your goals are <strong>achievable</strong> and attainable according to your abilities and resources have a major impact on your success. If you don't believe you can achieve a goal, it won't happen. When setting goals, it's important to make sure they are realistic in order to avoid setbacks and disappointment. Are you confident that this goal is reachable? If you believe it, you can achieve it!</p>
+
+      <h2>Relevant</h2>
+      <p>There are many reasons why we set goals — motivation, focus, desiring change, or trying something new. Regardless of your reason, your goal should be <strong>relevant</strong> to what's important to you. It is key that your goal aligns with your values, beliefs, priorities and objectives. Going back to our sample goal, it is clear that health and focus are important, so limiting your time online is relevant in order for these to remain intact.</p>
+
+      <h2>Time-Bound</h2>
+      <p>When do you want to achieve this goal? To answer this question your goal must be <strong>time-bound</strong>. You'll want to set a clear time-frame and deadline for completing your goal. This piece will also help you keep track of your success.</p>
+      <div class="smart-highlight"><p><em>"I will limit surfing through online communities to only three days a week, no longer than thirty minutes at a time over the next month, for better health and focus."</em></p></div>
+      <p>The when question has now been answered. You have given yourself a month to achieve your goal.</p>
+
+      <p><strong>Congratulations! You have turned your great goal into a SMART goal!</strong></p>
+
+      <p>Following these simple steps could result in higher success rates. These steps can also be applied to New Year Resolutions. No more giving up due to failed attempts and unsuccessful results. You now know the SMART way to accomplishing what you desire.</p>
+
+      <p><em>What goal will you achieve first?</em></p>
+
+      <div class="post-tags">
+        <div class="post-tags-label">Tags</div>
+        <span class="post-tag">goals</span>
+        <span class="post-tag">SMART goals</span>
+        <span class="post-tag">success</span>
+        <span class="post-tag">inspiration</span>
+        <span class="post-tag">resolutions</span>
+        <span class="post-tag">achievement</span>
+      </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <section class="recent-posts">
+    <div class="recent-posts-inner">
+      <h2>Recent <em>Posts</em></h2>
+      <div class="recent-grid">
+        <a href="post-narcissists-therapy.html" class="recent-card">
+          <img src="https://static.wixstatic.com/media/f3df2a_97ab278cfcd94450b3c3a21420873f29~mv2.jpg/v1/fill/w_454,h_341,fp_0.50_0.50,q_90,enc_avif,quality_auto/f3df2a_97ab278cfcd94450b3c3a21420873f29~mv2.webp" alt="Narcissists in Therapy">
+          <div><div class="recent-card-title">Why You Might Be Drawn to Narcissists—Even in Therapy</div><div class="recent-card-author">Tanise I. Smith, MS, LCPC · Sep 3, 2025</div></div>
+        </a>
+        <a href="post-say-no.html" class="recent-card">
+          <img src="https://static.wixstatic.com/media/nsplsh_32547a5375515a4f486534~mv2_d_3019_4025_s_4_2.jpg/v1/fill/w_454,h_341,fp_0.50_0.50,q_90,enc_avif,quality_auto/nsplsh_32547a5375515a4f486534~mv2_d_3019_4025_s_4_2.webp" alt="Say No">
+          <div><div class="recent-card-title">Say No: Improve Your Mental and Physical Well-Being</div><div class="recent-card-author">Cynthia Stokes, LCC · Jan 31, 2025</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><img class="footer-logo" src="images/logo.png" alt="Journey Embraced Counseling"><p class="footer-about">Compassionate, insight-driven counseling for individuals, couples, and families. Serving Missouri and Kansas since 2020.</p><div class="footer-social"><a href="https://www.facebook.com/journeyembracedkc" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="mailto:tanise@jecounselingkc.com" aria-label="Email us">✉</a></div></div>
+      <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="index.html#about">About Us</a></li><li><a href="index.html#counselors">Our Team</a></li><li><a href="index.html#services">Services</a></li><li><a href="workshops.html">Workshops</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h5>Our Counselors</h5><ul><li><a href="index.html#tanise">Tanise Smith</a></li><li><a href="index.html#natasha">Natasha Harris-Butler</a></li><li><a href="index.html#debra">Debra Richardson</a></li><li><a href="index.html#chris">Chris Gudjenov</a></li><li><a href="index.html#cynthia">Cynthia Stokes</a></li><li><a href="index.html#jonathan">Jonathan Slade</a></li></ul></div>
+      <div class="footer-col footer-contact-info"><h5>Contact</h5><p>12480 W. 62 Terr.<br>Shawnee, KS 66216</p><p><a href="tel:8169743389">816-974-3389</a></p><p><a href="mailto:tanise@jecounselingkc.com">tanise&#64;jecounselingkc.com</a></p></div>
+    </div>
+    <div class="footer-pt-badge"><a href="https://www.psychologytoday.com/us/therapists/tanise-smith-shawnee-ks/755329" target="_blank" rel="noopener"><img src="images/psychology_today.png" alt="Verified by Psychology Today" height="52"></a></div>
+    <div class="footer-bottom"><p>&copy; 2025 Journey Embraced Counseling LLC. All rights reserved.</p><div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </footer>
+
+    <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="modal">
+      <button class="modal-x" aria-label="Close">✕</button>
+      <div class="modal-h" id="bookingModalTitle">Book a Session</div>
+      <div class="modal-sub">Fill out the form below and we'll be in touch to confirm your appointment.</div>
+      <form name="booking" netlify netlify-honeypot="bot-field" id="bookingForm">
+        <input type="hidden" name="form-name" value="booking">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="fg"><label>Your Name</label><div class="fg-row"><input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required><input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required></div></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000" autocomplete="tel"></div>
+        <div class="fg"><label>Select Counselor</label><select name="counselor" id="counselorSelect"><option value="">Choose a counselor...</option><option value="Tanise Smith, MS, LCPC">Tanise Smith, MS, LCPC</option><option value="Natasha Harris-Butler, LCSW">Natasha Harris-Butler, LCSW</option><option value="Debra Richardson, LSCSW">Debra Richardson, LSCSW</option><option value="Chris Gudjenov, LPC">Chris Gudjenov, LPC</option><option value="Cynthia Stokes, LCC">Cynthia Stokes, LCC</option><option value="Jonathan Slade, B.Th.">Jonathan Slade, B.Th.</option><option value="No preference">No preference</option></select></div>
+        <div class="fg"><label>Service Type</label><select name="service"><option value="">Select a service...</option><option>Individual Counseling</option><option>Couples Therapy</option><option>Adolescent Support</option><option>Faith-Based Counseling</option><option>Life Coaching</option><option>Narcissistic Abuse Recovery</option><option>Men's Mental Health</option><option>Group Therapy</option></select></div>
+        <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Brief description of what you'd like to work on..."></textarea></div>
+        <button type="submit" class="btn-modal">Request Appointment</button>
+      </form>
+      <div id="bookingSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <p>Thank you! Your request has been received. We'll be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

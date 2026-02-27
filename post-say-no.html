@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Say No: Improve Your Mental and Physical Well-Being — Journey Embraced Counseling Blog">
+  <title>Say No: Improve Your Mental and Physical Well-Being | JEC Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .post-hero{background:var(--ink);padding:140px 24px 60px;text-align:center;position:relative;overflow:hidden}
+    .post-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,212,168,.15) 0%,transparent 60%)}
+    .post-back{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);text-decoration:none;margin-bottom:24px;position:relative}
+    .post-back:hover{color:var(--mint-light)}
+    .post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1.2;max-width:800px;margin:0 auto 24px;position:relative}
+    .post-meta{display:flex;align-items:center;justify-content:center;gap:12px;position:relative}
+    .post-meta-author-img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,212,168,.4)}
+    .post-meta-name{font-family:'Jost',sans-serif;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.85)}
+    .post-meta-sep{color:rgba(255,255,255,.25)}
+    .post-meta-date{font-family:'Jost',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5)}
+    .post-meta-read{font-family:'Jost',sans-serif;font-size:.8rem;color:var(--mint)}
+    .post-hero-img{width:100%;max-width:900px;margin:48px auto 0;display:block;border-radius:4px;object-fit:cover;max-height:500px}
+    .post-body-wrap{max-width:760px;margin:0 auto;padding:64px 24px}
+    .post-body{font-family:'Jost',sans-serif;font-size:.97rem;line-height:1.9;color:#444}
+    .post-body p{margin-bottom:1.4rem}
+    .post-body h2,.post-body h3{font-family:'Playfair Display',serif;color:var(--ink);margin:2.5rem 0 1rem;line-height:1.3}
+    .post-body h2{font-size:1.5rem}
+    .post-body h3{font-size:1.2rem}
+    .post-body strong{color:var(--ink);font-weight:600}
+    .post-body em{font-style:italic;color:var(--purple)}
+    .post-body ul{margin:1rem 0 1.4rem 1.5rem}
+    .post-body ul li{margin-bottom:.6rem;line-height:1.7}
+    .post-body blockquote{border-left:3px solid var(--mint);padding:.75rem 1.25rem;margin:1.5rem 0;background:#f7fffe;font-style:italic;color:var(--mist)}
+    .post-tags{margin-top:48px;padding-top:32px;border-top:1px solid var(--stone)}
+    .post-tags-label{font-family:'Jost',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--mist);margin-bottom:12px}
+    .post-tag{display:inline-block;font-family:'Jost',sans-serif;font-size:.72rem;background:var(--warm);color:var(--purple);border:1px solid rgba(180,79,212,.2);padding:.25rem .75rem;border-radius:20px;margin:0 4px 6px 0;text-decoration:none}
+    .post-tag:hover{background:rgba(180,79,212,.08)}
+    .recent-posts{background:#faf9f7;padding:64px 24px}
+    .recent-posts-inner{max-width:900px;margin:0 auto}
+    .recent-posts h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--ink);margin-bottom:32px}
+    .recent-posts h2 em{font-style:italic;color:var(--purple)}
+    .recent-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .recent-card{display:flex;gap:16px;text-decoration:none;background:#fff;padding:16px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .2s}
+    .recent-card:hover{transform:translateY(-2px)}
+    .recent-card img{width:90px;height:68px;object-fit:cover;border-radius:2px;flex-shrink:0}
+    .recent-card-title{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.3}
+    .recent-card-author{font-family:'Jost',sans-serif;font-size:.72rem;color:var(--mist);margin-top:6px}
+    @media(max-width:600px){.recent-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <nav id="mainNav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Journey Embraced Counseling"></a>
+    <div class="nav-center">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="index.html#about" class="nav-link">About</a></div>
+      <div class="nav-item">
+        <button class="nav-link" id="teamDropBtn" aria-expanded="false" aria-haspopup="true">Our Team<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
+        <div class="mega-drop" role="menu">
+          <a class="drop-card" href="index.html#tanise" role="menuitem"><img class="drop-thumb" src="images/tanise.jpg" alt="Tanise Smith"><div class="drop-info"><div class="drop-name">Tanise Smith</div><div class="drop-role">MS, LCPC · Founder</div></div></a>
+          <a class="drop-card" href="index.html#natasha" role="menuitem"><img class="drop-thumb" src="images/natasha.jpg" alt="Natasha Harris-Butler"><div class="drop-info"><div class="drop-name">Natasha Harris-Butler</div><div class="drop-role">LCSW, LSCSW</div></div></a>
+          <a class="drop-card" href="index.html#debra" role="menuitem"><img class="drop-thumb" src="images/debra.jpg" alt="Debra Richardson"><div class="drop-info"><div class="drop-name">Debra Richardson</div><div class="drop-role">LSCSW, LCSW</div></div></a>
+          <a class="drop-card" href="index.html#chris" role="menuitem"><img class="drop-thumb" src="images/chris.jpg" alt="Chris Gudjenov"><div class="drop-info"><div class="drop-name">Chris Gudjenov</div><div class="drop-role">LPC · Athletes & Men</div></div></a>
+          <a class="drop-card" href="index.html#cynthia" role="menuitem"><img class="drop-thumb" src="images/cynthia.jpg" alt="Cynthia Stokes"><div class="drop-info"><div class="drop-name">Cynthia Stokes</div><div class="drop-role">LCC · Life Coach</div></div></a>
+          <a class="drop-card" href="index.html#jonathan" role="menuitem"><img class="drop-thumb" src="images/jonathan.jpg" alt="Jonathan Slade"><div class="drop-info"><div class="drop-name">Jonathan Slade</div><div class="drop-role">B.Th. · Pastoral Coach</div></div></a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="index.html#services" class="nav-link">Services</a></div>
+      <div class="nav-item"><a href="workshops.html" class="nav-link">Workshops</a></div>
+      <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+    </div>
+    <div class="nav-right">
+<a href="#" class="btn-nav-cta" id="bookNavBtn">Book a Session</a>
+      <button class="mob-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Mobile navigation">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#counselors">Our Team</a><a href="index.html#services">Services</a><a href="workshops.html">Workshops</a><a href="blog.html">Blog</a><a href="#" id="mobBook" class="mob-book-link">Book Now</a>
+  </div>
+
+  <section class="post-hero">
+    <a href="blog.html" class="post-back">← All Posts</a>
+    <h1>Say No: Improve Your Mental and Physical Well-Being</h1>
+    <div class="post-meta">
+      <img class="post-meta-author-img" src="https://static.wixstatic.com/media/f3df2a_ed8cdbc0320a438393f0426898f3b0ae~mv2.jpg/v1/fill/w_64,h_64,al_c,q_80,enc_avif,quality_auto/f3df2a_ed8cdbc0320a438393f0426898f3b0ae~mv2.jpg" alt="Cynthia Stokes">
+      <span class="post-meta-name">Cynthia Stokes, LCC</span>
+      <span class="post-meta-sep">·</span>
+      <span class="post-meta-date">Jan 31, 2025</span>
+      <span class="post-meta-sep">·</span>
+      <span class="post-meta-read">4 min read</span>
+    </div>
+    <img class="post-hero-img" src="https://static.wixstatic.com/media/nsplsh_32547a5375515a4f486534~mv2_d_3019_4025_s_4_2.jpg/v1/fill/w_980,h_1307,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_32547a5375515a4f486534~mv2_d_3019_4025_s_4_2.jpg" alt="The word NO written in yellow on the ground">
+  </section>
+
+  <div class="post-body-wrap">
+    <div class="post-body">
+
+      <p>The word No is a small yet significantly impactful word that many have a hard time saying. Depending on the context used it can be seen as a negative or cold response.</p>
+
+      <p>Whether you're needing to decline an invitation, say no to extra tasks or set boundaries, saying no can improve your overall health and well-being.</p>
+
+      <blockquote>"Of course I can! It's no problem at all. Sure, anytime. You bet I will! I don't mind at all. Absolutely!"</blockquote>
+
+      <p>Do you ever find yourself in this cycle of yes words and phrases but on the inside you are screaming, asking yourself why did I just say that? You're not alone. This is a common daily struggle for many of us and it takes work breaking out of it.</p>
+
+      <p>Why is it so hard to say no? The answers to this question is key to understanding how one can change their response to reflect what they really want to say and how they truly feel.</p>
+
+      <h2>Let's explore some reasons we avoid saying No:</h2>
+
+      <ul>
+        <li><strong>For the appeasement of others —</strong> Making everyone happy, satisfied and relieved is our number one goal, even if it makes us miserable.<br><em>Perspective: Operating in this way can turn into resentment towards others because you feel like you were taken advantage of. You are in control of the standards you set for yourself.</em></li>
+        <li><strong>To avoid conflict and disappointment —</strong> We try our best to keep the peace, assuring our peers and loved ones they can count on us.<br><em>Perspective: Being honest and transparent about your limits encourages mutual respect and understanding.</em></li>
+        <li><strong>To uphold a positive image —</strong> We want people to think we always have it all together and can take on the world.<br><em>Perspective: This facade quickly becomes exhausting. When we pose as superheroes this paints a picture that we give help and support but don't need to receive it.</em></li>
+        <li><strong>We deem others more important than ourselves —</strong> Sometimes we care more about the well-being of others before we consider our own.<br><em>Perspective: It is okay to have self-compassion and practice self-care because you matter.</em></li>
+        <li><strong>To dodge a guilty conscience —</strong> When you genuinely love helping people, you feel obligated to do all you can even if you know you aren't able to.<br><em>Perspective: We can only do what we're able to do. Sometimes stepping back creates space and opportunity for others to step in.</em></li>
+        <li><strong>Uncertain how to say no politely —</strong> You may feel your No comes off as mean or rude so it's easier to just go along with things.<br><em>Perspective: There are ways to respectfully and politely decline.</em></li>
+      </ul>
+
+      <h2>The Health Benefits of Saying No</h2>
+
+      <p>Think about what you're saying yes to when you're able to say no. When you set healthy boundaries for yourself, you are saying yes to:</p>
+      <ul>
+        <li>Prioritizing what matters to you</li>
+        <li>More time and energy for the things you value</li>
+        <li>Ease of mind</li>
+        <li>Less Stress</li>
+        <li>Healthy Life Balance</li>
+        <li>Rejuvenation</li>
+      </ul>
+
+      <p>Saying no is so empowering and builds up self-confidence. It's a skill that allows you to have more control over your life. A skill that helps you to focus on your needs instead of what makes everyone else happy. You will actually find that setting clear boundaries will strengthen your relationships, increase productivity and give you a more fulfilling life. Activating your no gives your mental and physical health a boost.</p>
+
+      <h2>Ways to Say No Politely</h2>
+
+      <p>Saying no in a polite way can make it easier. You don't always have to give a specific reason for your why. Be straightforward, brief and stick to your answer. You can simply reply with phrases like:</p>
+      <ul>
+        <li>I'm so honored you asked but I just simply can't right now.</li>
+        <li>I'm so sorry but I'm not able to fit this in.</li>
+        <li>I don't think I'm the right person for that right now as my plate is already full.</li>
+        <li>Sadly, I will have to decline this round.</li>
+        <li>Thank you for thinking of me but I have to respectfully decline due to other commitments.</li>
+        <li>I wish I were able to.</li>
+        <li>If I could I truly would.</li>
+        <li>Honestly it's just not a good time for me.</li>
+      </ul>
+
+      <p>As you can see, saying No doesn't have to be as hard as we sometimes make it. Considering these new perspectives and understanding the health benefits of saying No, I hope you feel empowered to start making your mental and physical well-being a priority. Leave the guilt behind and stand firm on your boundaries. Protect your mental capacity and admit your limits. Start living with an ease of mind, no regrets and practice saying No.</p>
+
+      <div class="post-tags">
+        <div class="post-tags-label">Tags</div>
+        <span class="post-tag">say no</span>
+        <span class="post-tag">well-being</span>
+        <span class="post-tag">healthy balance</span>
+        <span class="post-tag">confidence</span>
+        <span class="post-tag">prioritize</span>
+        <span class="post-tag">boundaries</span>
+        <span class="post-tag">self-care</span>
+        <span class="post-tag">better health</span>
+      </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <section class="recent-posts">
+    <div class="recent-posts-inner">
+      <h2>Recent <em>Posts</em></h2>
+      <div class="recent-grid">
+        <a href="post-narcissists-therapy.html" class="recent-card">
+          <img src="https://static.wixstatic.com/media/f3df2a_97ab278cfcd94450b3c3a21420873f29~mv2.jpg/v1/fill/w_454,h_341,fp_0.50_0.50,q_90,enc_avif,quality_auto/f3df2a_97ab278cfcd94450b3c3a21420873f29~mv2.webp" alt="Narcissists in Therapy">
+          <div><div class="recent-card-title">Why You Might Be Drawn to Narcissists—Even in Therapy</div><div class="recent-card-author">Tanise I. Smith, MS, LCPC · Sep 3, 2025</div></div>
+        </a>
+        <a href="post-smart-goals.html" class="recent-card">
+          <img src="https://static.wixstatic.com/media/nsplsh_63595f54434b723562656b~mv2.jpg/v1/fill/w_454,h_341,fp_0.50_0.50,q_90,enc_avif,quality_auto/nsplsh_63595f54434b723562656b~mv2.webp" alt="SMART Goals">
+          <div><div class="recent-card-title">Wanting Your Goals to Stick? Make them SMART!</div><div class="recent-card-author">Cynthia Stokes, LCC · Dec 19, 2024</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><img class="footer-logo" src="images/logo.png" alt="Journey Embraced Counseling"><p class="footer-about">Compassionate, insight-driven counseling for individuals, couples, and families. Serving Missouri and Kansas since 2020.</p><div class="footer-social"><a href="https://www.facebook.com/journeyembracedkc" target="_blank" rel="noopener" aria-label="Facebook">f</a><a href="mailto:tanise@jecounselingkc.com" aria-label="Email us">✉</a></div></div>
+      <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="index.html#about">About Us</a></li><li><a href="index.html#counselors">Our Team</a></li><li><a href="index.html#services">Services</a></li><li><a href="workshops.html">Workshops</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h5>Our Counselors</h5><ul><li><a href="index.html#tanise">Tanise Smith</a></li><li><a href="index.html#natasha">Natasha Harris-Butler</a></li><li><a href="index.html#debra">Debra Richardson</a></li><li><a href="index.html#chris">Chris Gudjenov</a></li><li><a href="index.html#cynthia">Cynthia Stokes</a></li><li><a href="index.html#jonathan">Jonathan Slade</a></li></ul></div>
+      <div class="footer-col footer-contact-info"><h5>Contact</h5><p>12480 W. 62 Terr.<br>Shawnee, KS 66216</p><p><a href="tel:8169743389">816-974-3389</a></p><p><a href="mailto:tanise@jecounselingkc.com">tanise&#64;jecounselingkc.com</a></p></div>
+    </div>
+    <div class="footer-pt-badge"><a href="https://www.psychologytoday.com/us/therapists/tanise-smith-shawnee-ks/755329" target="_blank" rel="noopener"><img src="images/psychology_today.png" alt="Verified by Psychology Today" height="52"></a></div>
+    <div class="footer-bottom"><p>&copy; 2025 Journey Embraced Counseling LLC. All rights reserved.</p><div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </footer>
+
+    <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="modal">
+      <button class="modal-x" aria-label="Close">✕</button>
+      <div class="modal-h" id="bookingModalTitle">Book a Session</div>
+      <div class="modal-sub">Fill out the form below and we'll be in touch to confirm your appointment.</div>
+      <form name="booking" netlify netlify-honeypot="bot-field" id="bookingForm">
+        <input type="hidden" name="form-name" value="booking">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="fg"><label>Your Name</label><div class="fg-row"><input type="text" name="first-name" placeholder="First name" autocomplete="given-name" required><input type="text" name="last-name" placeholder="Last name" autocomplete="family-name" required></div></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="(816) 000-0000" autocomplete="tel"></div>
+        <div class="fg"><label>Select Counselor</label><select name="counselor" id="counselorSelect"><option value="">Choose a counselor...</option><option value="Tanise Smith, MS, LCPC">Tanise Smith, MS, LCPC</option><option value="Natasha Harris-Butler, LCSW">Natasha Harris-Butler, LCSW</option><option value="Debra Richardson, LSCSW">Debra Richardson, LSCSW</option><option value="Chris Gudjenov, LPC">Chris Gudjenov, LPC</option><option value="Cynthia Stokes, LCC">Cynthia Stokes, LCC</option><option value="Jonathan Slade, B.Th.">Jonathan Slade, B.Th.</option><option value="No preference">No preference</option></select></div>
+        <div class="fg"><label>Service Type</label><select name="service"><option value="">Select a service...</option><option>Individual Counseling</option><option>Couples Therapy</option><option>Adolescent Support</option><option>Faith-Based Counseling</option><option>Life Coaching</option><option>Narcissistic Abuse Recovery</option><option>Men's Mental Health</option><option>Group Therapy</option></select></div>
+        <div class="fg"><label>Message (Optional)</label><textarea name="message" placeholder="Brief description of what you'd like to work on..."></textarea></div>
+        <button type="submit" class="btn-modal">Request Appointment</button>
+      </form>
+      <div id="bookingSuccess" class="modal-success" style="display:none;">
+        <div class="success-icon">✓</div>
+        <p>Thank you! Your request has been received. We'll be in touch shortly.</p>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
