@@ -458,7 +458,7 @@
         <h5>Contact</h5>
         <p>12480 W. 62 Terr.<br>Shawnee, KS 66216</p>
         <p><a href="tel:8169743389">816-974-3389</a></p>
-        <p><a href="mailto:tanise@jecounselingkc.com">tanise@jecounselingkc.com</a></p>
+        <p><a href="mailto:tanise@jecounselingkc.com">tanise&#64;jecounselingkc.com</a></p>
       </div>
     </div>
     <div class="footer-pt-badge">
@@ -530,7 +530,7 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
   <script>
     (function () {
       const slides = document.querySelectorAll('.test-slide');
@@ -542,14 +542,4 @@
         dots[current].classList.remove('active');
         current = (n + slides.length) % slides.length;
         slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }
-      function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => { clearInterval(timer); goTo(parseInt(dot.dataset.index)); startAuto(); });
-      });
-      startAuto();
-    })();
-  </script>
-</body>
-</html>
+ 
